@@ -4,6 +4,15 @@ title: About
 permalink: /about/
 ---
 
-This is Minima Reboot, a Bootstrap-based rewrite of [Minima](https://github.com/jekyll/minima), the base Jekyll theme. It is designed to be lightweight, easy-to-use, and responsive.
+This is the base Jekyll theme. You can find out more info about customizing your Jekyll theme, as well as basic Jekyll usage documentation at [jekyllrb.com](https://jekyllrb.com/)
 
-You can find Minima Reboot's source code at: [minima-reboot](https://github.com/aterenin/minima-reboot).
+You can find the source code for Minima at GitHub:
+[jekyll][jekyll-organization] /
+[minima](https://github.com/jekyll/minima)
+
+You can find the source code for Jekyll at GitHub:
+[jekyll][jekyll-organization] /
+[jekyll](https://github.com/jekyll/jekyll)
+
+
+[jekyll-organization]: https://github.com/jekyll
