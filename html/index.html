@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AlLerGy Page</title>
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      scroll-behavior: smooth;
+      font-family: Arial, sans-serif;
+    }
+    section {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+    }
+    #hero {
+        position: relative;
+        background: url('./img/a.png') no-repeat center center/cover;
+        color: white;
+        font-size: 5rem;
+        text-align: center;
+        z-index: 1;
+    }
+
+    #hero::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.40);
+        backdrop-filter: blur(12px);
+        z-index: -1;
+    }
+
+    header {
+    display: flex;
+    align-items: center;
+      position: fixed;
+      top: 0;
+      width: 100%;
+      display: flex;
+      background: rgba(24, 25, 38, 0.40);
+        backdrop-filter: blur(6px);
+      /* height: 69px; */
+      padding: 12px 80px;
+      gap: 80px;
+      z-index: 1000;
+      transform: translateY(-100%);
+      transition: transform 0.3s ease-in-out;
+      flex-shrink: 0;
+    }
+    header.show {
+      transform: translateY(0);
+    }
+    header a {
+      text-decoration: none;
+      color: #333;
+      font-size: 1.2rem;
+    }
+    /* #allergy { background-color: #f9e0e0; }
+    #activity { background-color: #e0f9e0; }
+    #members { background-color: #e0e0f9; }
+    #history { background-color: #f9f9e0; }
+    #contact { background-color: #e0f9f9; } */
+    footer {
+    display: flex;
+    background: linear-gradient(rgba(0, 0, 0, 0.40), rgba(0, 0, 0, 0.40)), #24273A;
+      text-align: center;
+      height: 313px;
+      padding: 0px 200px;
+      width: 100%;
+      box-sizing: border-box;
+      justify-content: space-between;
+      align-items: center;
+    flex-shrink: 0;
+    }
+    .social-icons {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+    .social-icons a {
+      color: #333;
+      font-size: 2rem;
+      text-decoration: none;
+    }
+    .page-section{
+        background: #24273A;
+    }
+    .header-allergy{
+        color: #ffffff;
+    text-align: left;
+    font-family: "Inter-Bold", sans-serif;
+    font-size: 24px;
+    font-weight: 700;
+    position: relative;
+    }
+    .header-g{
+        display: flex;
+        align-items: center;
+        gap: 40px;
+    }
+    .header-g a{
+        color: #FFF;
+        font-family: Inter;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+    }
+    .footer-box{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 20px;
+    }
+    .footer-box-info{
+        color: #FFF;
+        font-family: Inter;
+        font-size: 32px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: normal;
+    }
+    .footer-box-context{
+        width: 500px;
+        color: #FFF;
+        font-family: "Inter-Medium", sans-serif, Inter;
+        font-size: 24px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: normal;
+        text-align: left;
+    }
+    .header-allergy-mom{
+        display: flex;
+    flex-direction: row;
+    gap: 80px;
+    align-items: center;
+    justify-content: flex-start;
+    flex-shrink: 0;
+    position: relative;
+    }
+    .contact-box{
+        display: flex;
+    flex-direction: column;
+    gap: 60px;
+    align-items: center;
+    justify-content: flex-start;
+    position: absolute;
+    left: 50%;
+    translate: -50%;
+    top: 366px;
+    }
+    .contact-text{
+    color: #ffffff;
+    text-align: center;
+    font-family: "Inter-ExtraBold", sans-serif;
+    font-size: 64px;
+    font-weight: 800;
+    position: relative;
+    }
+    .contact-btn{
+    background: #305aa8;
+    border-radius: 13.5px;
+    padding: 10.12px 13.5px 10.12px 13.5px;
+    display: flex;
+    flex-direction: row;
+    gap: 8.44px;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    position: relative;
+    color: #ffffff;
+    text-align: left;
+    font-family: "Inter-ExtraBold", sans-serif;
+    font-size: 36px;
+    font-weight: 800;
+    }
+  </style>
+  <script>
+    window.addEventListener('scroll', function() {
+      const header = document.querySelector('header');
+      if(window.scrollY > window.innerHeight - 50) {
+        header.classList.add('show');
+      } else {
+        header.classList.remove('show');
+      }
+    });
+  </script>
+</head>
+<body>
+  <section id="hero">
+    <h1>PS</h1>
+  </section>
+  <header class="header1">
+    <div class="header-allergy-mom">
+        <a href="#allergy" class="header-allergy">AlLerGy</a>
+    </div>
+    <div class="header-g">
+    <a href="#activity">모임활동</a>
+    <a href="#members">동아리부원</a>
+    <a href="#history">활동이력</a>
+    <a href="#contact">문의</a>
+    </div>
+    
+  </header>
+
+  <section id="allergy" class="page-section">AlLerGy 페이지</section>
+  <section id="activity" class="page-section">모임활동 페이지</section>
+  <section id="members" class="page-section">동아리부원 페이지</section>
+  <section id="history" class="page-section">활동이력 페이지</section>
+  <section id="contact" class="page-section" style="height: 70%; min-height: 70vh;">
+    <div class ="contact-box">
+        <div class="contact-text">  
+          AlLerGy와 함께<br>알고리즘에 도전해봐요
+        </div>
+        <div class="contact-btn">
+            문의하기
+        </div>
+    </div>
+ </section>
+  <div class="social-icons">
+    <a href=""><img class="frame11" src="./img/frame10.svg"></a>
+    <a href=""><img class="frame12" src="./img/frame11.svg"></a>
+    <a href=""><img class="message-alt-fill6" src="./img/message-alt-fill5.svg"></a>
+  </div>
+
+  <footer>
+    <div class="footer-box">
+        <div class="footer-box-info">
+            info
+        </div>
+        <div class="footer-box-context">
+            회장 : 김이든<br>
+            지도교수 : 이동재<br>
+            email : rladlems1031@gmail.com
+        </div>
+    </div>
+  </footer>
+</body>
+</html>
