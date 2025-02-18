@@ -47,7 +47,6 @@
       top: 0;
       width: 100%;
       display: flex;
-      justify-content: center;
       background: rgba(24, 25, 38, 0.40);
         backdrop-filter: blur(6px);
       /* height: 69px; */
@@ -100,12 +99,12 @@
         background: #24273A;
     }
     .header-allergy{
-        color: #FFF;
-        font-family: Inter;
-        font-size: 24px;
-        font-style: normal;
-        font-weight: 700;
-        line-height: normal;
+        color: #ffffff;
+    text-align: left;
+    font-family: "Inter-Bold", sans-serif;
+    font-size: 24px;
+    font-weight: 700;
+    position: relative;
     }
     .header-g{
         display: flex;
@@ -135,12 +134,59 @@
         line-height: normal;
     }
     .footer-box-context{
+        width: 500px;
         color: #FFF;
-        font-family: Inter;
+        font-family: "Inter-Medium", sans-serif, Inter;
         font-size: 24px;
         font-style: normal;
         font-weight: 500;
         line-height: normal;
+        text-align: left;
+    }
+    .header-allergy-mom{
+        display: flex;
+    flex-direction: row;
+    gap: 80px;
+    align-items: center;
+    justify-content: flex-start;
+    flex-shrink: 0;
+    position: relative;
+    }
+    .contact-box{
+        display: flex;
+    flex-direction: column;
+    gap: 60px;
+    align-items: center;
+    justify-content: flex-start;
+    position: absolute;
+    left: 50%;
+    translate: -50%;
+    top: 366px;
+    }
+    .contact-text{
+    color: #ffffff;
+    text-align: center;
+    font-family: "Inter-ExtraBold", sans-serif;
+    font-size: 64px;
+    font-weight: 800;
+    position: relative;
+    }
+    .contact-btn{
+    background: #305aa8;
+    border-radius: 13.5px;
+    padding: 10.12px 13.5px 10.12px 13.5px;
+    display: flex;
+    flex-direction: row;
+    gap: 8.44px;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    position: relative;
+    color: #ffffff;
+    text-align: left;
+    font-family: "Inter-ExtraBold", sans-serif;
+    font-size: 36px;
+    font-weight: 800;
     }
   </style>
   <script>
@@ -159,7 +205,9 @@
     <h1>PS</h1>
   </section>
   <header class="header1">
-    <a href="#allergy" class="header-allergy">AlLerGy</a>
+    <div class="header-allergy-mom">
+        <a href="#allergy" class="header-allergy">AlLerGy</a>
+    </div>
     <div class="header-g">
     <a href="#activity">모임활동</a>
     <a href="#members">동아리부원</a>
@@ -173,12 +221,20 @@
   <section id="activity" class="page-section">모임활동 페이지</section>
   <section id="members" class="page-section">동아리부원 페이지</section>
   <section id="history" class="page-section">활동이력 페이지</section>
-  <section id="contact" class="page-section">문의 페이지</section>
-
+  <section id="contact" class="page-section" style="height: 70%; min-height: 70vh;">
+    <div class ="contact-box">
+        <div class="contact-text">  
+          AlLerGy와 함께<br>알고리즘에 도전해봐요
+        </div>
+        <div class="contact-btn">
+            문의하기
+        </div>
+    </div>
+ </section>
   <div class="social-icons">
-    <a href="#">&#xf09b;</a> <!-- GitHub icon placeholder -->
-    <a href="#">&#xf08c;</a> <!-- Notion icon placeholder -->
-    <a href="#">&#x2709;</a> <!-- Email icon placeholder -->
+    <a href=""><img class="frame11" src="./img/frame10.svg"></a>
+    <a href=""><img class="frame12" src="./img/frame11.svg"></a>
+    <a href=""><img class="message-alt-fill6" src="./img/message-alt-fill5.svg"></a>
   </div>
 
   <footer>
@@ -187,8 +243,8 @@
             info
         </div>
         <div class="footer-box-context">
-            회장 : 김이든
-            지도교수 : 이동재
+            회장 : 김이든<br>
+            지도교수 : 이동재<br>
             email : rladlems1031@gmail.com
         </div>
     </div>
