@@ -188,6 +188,39 @@
     font-size: 36px;
     font-weight: 800;
     }
+    .hero-div{
+      display: flex;
+    flex-direction: column;
+    gap: 32px;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    width: 500px;
+    }
+    .hero-div-div1{
+      color: #ffffff;
+    text-align: center;
+    font-family: "Inter-ExtraBold", sans-serif;
+    font-size: 128px;
+    font-weight: 800;
+    position: relative;
+    }
+    .hero-div-div2{
+      color: #c9c9c9;
+    text-align: left;
+    font-family: "Inter-Medium", sans-serif;
+    font-size: 36px;
+    font-weight: 500;
+    position: absolute;
+    left: 10px;
+    top: 187px;
+    }
+    .hero-blue{
+      display: inline;
+      background: rgba(29, 51, 195, 0.6);
+      border-radius: 4px;
+      padding: 1px;
+    }
   </style>
   <script>
     window.addEventListener('scroll', function() {
@@ -202,8 +235,14 @@
 </head>
 <body>
   <section id="hero">
-    <div>
-      
+    <div class="hero-div">
+      <div class="hero-div-div1">
+        AlLerGy
+      </div>
+      <div class="hero-div-div2">
+        Kangwon National University<br>
+        <div class="hero-blue">Al</div>gorithm <div class="hero-blue">L</div>ov<div class="hero-blue">er</div>'s <div class="hero-blue">Gy</div>m
+      </div>
     </div>
     <!-- <h1>PS</h1> -->
   </section>
