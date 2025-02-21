@@ -8,7 +8,8 @@
     html, body {
       margin: 0;
       padding: 0;
-      height: 100%;
+      width: 100%;
+      min-height: 100%;
       scroll-behavior: smooth;
       font-family: Arial, sans-serif;
       background: #24273A;
@@ -27,6 +28,7 @@
         font-size: 5rem;
         text-align: center;
         z-index: 1;
+        width: 100%;
     }
 
     #hero::before {
@@ -356,7 +358,7 @@
     left: 50%;
     translate: -50% -50%;
     
-    padding: 20px;
+    padding: 10px;
     top: 50%;
     }
     .activity-box-title {
@@ -390,19 +392,27 @@
     border-color: #ffffff;
     border-width: 4px 0 0 0;
     flex-shrink: 0;
-    width: 100%;
+    width: 80%;
     height: 0px;
     position: relative;
     }
-    .activity-box-context {
+    .activity-box-txt-box {
+      display: flex;
+    flex-direction: column;
+    gap: 12px;
+    align-items: flex-start;
+    justify-content: flex-start;
+    position: relative;
+    min-width: 250px;
+    }
+    .activity-box-context{
       color: #ffffff;
     text-align: left;
     font-family: "Inter-Regular", sans-serif;
-    font-size: 20px;
+    font-size: 22px;
     line-height: 170%;
     font-weight: 400;
     position: relative;
-    align-self: stretch;
     }
     .activity-box-image {
       padding: 20px;
@@ -412,7 +422,7 @@
     align-items: flex-start;
     justify-content: flex-start;
     flex-shrink: 0;
-    width: 300px;
+    width: 500px;
     position: relative;
     }
   </style>
@@ -420,10 +430,10 @@
     <div class="activity-box">
       <div class="activity-box-image">
         <!-- <img src="./img/image-20.png" alt="algorithm" style="width: 300px; height: 300px;"> -->
-        <img src="./img/image-20.png" alt="algorithm">
+        <img src="./img/image-20.png" alt="algorithm" style="width: 500px">
          
       </div>
-      <div class="activity-box-context">
+      <div class="activity-box-txt-box">
         <div class="activity-box-title">
           <div class="activity-box-title1">
             모임활동
@@ -444,7 +454,15 @@
     </div>
   </section>
   <section id="members" class="page-section">동아리부원 페이지</section>
-  <section id="history" class="page-section">활동이력 페이지</section>
+
+  <section id="history" class="page-section">
+    <div>
+      <div>활동이력력</div>
+      <div></div>
+      <div></div>
+    </div>
+  </section>
+
   <section id="contact" class="page-section" style="height: 70%; min-height: 70vh;">
     <div class ="contact-box">
         <div class="contact-text">  
