@@ -68,11 +68,6 @@
       color: #333;
       font-size: 1.2rem;
     }
-    /* #allergy { background-color: #f9e0e0; }
-    #activity { background-color: #e0f9e0; }
-    #members { background-color: #e0e0f9; }
-    #history { background-color: #f9f9e0; }
-    #contact { background-color: #e0f9f9; } */
     footer {
     display: flex;
     background: linear-gradient(rgba(0, 0, 0, 0.40), rgba(0, 0, 0, 0.40)), #24273A;
@@ -138,9 +133,9 @@
     }
     .footer-box-context{
         width: 500px;
-        color: #FFF;
+        color: #c9c9c9;
         font-family: "Inter-Medium", sans-serif, Inter;
-        font-size: 24px;
+        font-size: 20px;
         font-style: normal;
         font-weight: 500;
         line-height: normal;
@@ -449,17 +444,331 @@
           모임 후, 그날 못푼 문제 배당하여 복습 풀이
           정기 모임활동 때마다 저녁 제공
         </div>
-
       </div>
     </div>
   </section>
-  <section id="members" class="page-section">동아리부원 페이지</section>
+  <style>
+    .members-box {
+      padding: 40px;
+      display: flex;
+      flex-direction: row;
+      gap: 12px;
+      align-items: flex-start;
+      justify-content: flex-start;
+      position: absolute;
+      left: 50%;
+      translate: -50% -50%;
+      top: 50%;
+    }
+    .members-box-title {
+      color: #ffffff;
+      font-size: 48px;
+      text-align: left;
+      font-family: "Inter-ExtraBold", sans-serif;
+      font-weight: 800;
+      position: relative;
+      align-self: stretch;
+      padding: 40px;
+    }
+    .members-box-context {
+      background: rgba(0, 0, 0, 0.4);
+      border-radius: 40px;
+      padding: 40px;
+      display: flex;
+      flex-direction: column;
+      gap: 80px;
+      align-items: center;
+      justify-content: flex-start;
+      flex-shrink: 0;
+      position: relative;
+    }
+    .members-box-context-div {
+      display: flex;
+      flex-direction: column;
+      gap: 39px;
+      align-items: center;
+      justify-content: flex-start;
+      flex-shrink: 0;
+      position: relative;
+    }
+    .members-box-context-memebers {
+      display: flex;
+      flex-direction: column;
+      gap: 39px;
+      align-items: center;
+      justify-content: flex-start;
+      flex-shrink: 0;
+      position: relative;
+    }
+    .members-container{
+      background: #303030;
+    border-radius: 12px;
+    padding: 8px 12px 8px 12px;
+    display: flex;
+    flex-direction: row;
+    gap: 8px;
+    align-items: center;
+    justify-content: flex-start;
+    flex-shrink: 0;
+    width: 207px;
+    position: relative;
+    box-shadow: 0px 0px 4px 0px rgba(39, 226, 164, 1);
+    }
+    .members-container-context{
+      display: flex;
+    flex-direction: column;
+    gap: 8px;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-shrink: 0;
+    width: 125px;
+    position: relative;
+    }
+    .members-container-context-id{
+      color: #ffffff;
+    text-align: left;
+    font-family: "Inter-Bold", sans-serif;
+    font-size: 24px;
+    font-weight: 700;
+    position: relative;
+    align-self: stretch;
+    }
+    .members-container-context-text{
+    color: #ffffff;
+    text-align: left;
+    font-family: "Inter-Light", sans-serif;
+    font-size: 13px;
+    font-weight: 300;
+    position: relative;
+    align-self: stretch;
+    }
+    .members-box-context-title{
+      color: #ffffff;
+    }
+    .members-box-context-member-containers{
+    display: flex;
+    flex-direction: column;
+    gap: 39px;
+    align-items: center;
+    justify-content: flex-start;
+    flex-shrink: 0;
+    position: relative;
+    }
+  </style>
+  <section id="members" class="page-section">
+    <div class="members-box">
+      <div class="members-box-title">
+        멤버 소개
+      </div>
+      <div class="members-box-context">
+        <div class="members-box-context-div">
+          <div class="members-box-context-title">
+            지도교수 / 동아리 대표
+          </div>
+          <div class="members-box-context-member-containers">
+            <div class="members-container">
+              <img src="./img/rank/p4.svg">
+              <div class="members-container-context">
+                <div class="members-container-context-id">
+                  d2d2d2
+                </div>
+                <div class="members-container-context-text">
+                  "알고리즘 너무 좋아요"
+                </div>
+              </div>
+            </div>
+            <div class="members-container">
+              <img src="./img/rank/p4.svg">
+              <div class="members-container-context">
+                <div class="members-container-context-id">
+                  d2d2d2
+                </div>
+                <div class="members-container-context-text">
+                  "알고리즘 너무 좋아요"
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="members-box-context-div">
+          <div class="members-box-context-title">
+            멤버
+          </div>
+          <div class="members-box-context-member-containers">
+            <div class="members-container">
+              <img src="./img/rank/p4.svg">
+              <div class="members-container-context">
+                <div class="members-container-context-id">
+                  d2d2d2
+                </div>
+                <div class="members-container-context-text">
+                  "알고리즘 너무 좋아요"
+                </div>
+              </div>
+            </div>
+            <div class="members-container">
+              <img src="./img/rank/p4.svg">
+              <div class="members-container-context">
+                <div class="members-container-context-id">
+                  d2d2d2
+                </div>
+                <div class="members-container-context-text">
+                  "알고리즘 너무 좋아요"
+                </div>
+              </div>
+            </div>
+            <div class="members-container">
+              <img src="./img/rank/p4.svg">
+              <div class="members-container-context">
+                <div class="members-container-context-id">
+                  d2d2d2
+                </div>
+                <div class="members-container-context-text">
+                  "알고리즘 너무 좋아요"
+                </div>
+              </div>
+            </div>
+            <div class="members-container">
+              <img src="./img/rank/p4.svg">
+              <div class="members-container-context">
+                <div class="members-container-context-id">
+                  d2d2d2
+                </div>
+                <div class="members-container-context-text">
+                  "알고리즘 너무 좋아요"
+                </div>
+              </div>
+            </div>
+            <div class="members-container">
+              <img src="./img/rank/p4.svg">
+              <div class="members-container-context">
+                <div class="members-container-context-id">
+                  d2d2d2
+                </div>
+                <div class="members-container-context-text">
+                  "알고리즘 너무 좋아요"
+                </div>
+              </div>
+            </div>
+            <div class="members-container">
+              <img src="./img/rank/p4.svg">
+              <div class="members-container-context">
+                <div class="members-container-context-id">
+                  d2d2d2
+                </div>
+                <div class="members-container-context-text">
+                  "알고리즘 너무 좋아요"
+                </div>
+              </div>
+            </div>
 
+          </div>
+        </div>
+        
+      </div>
+    </div>
+  </section>
+  <style>
+    .history-box {
+      display: flex;
+      flex-direction: row;
+      gap: 356px;
+      align-items: flex-start;
+      justify-content: flex-start;
+      position: absolute;
+      padding: 40px;
+      /* background: rgba(0, 0, 0, 0.4);
+      border-radius: 40px; */
+
+    /* left: 301px;
+    top: 351px; */
+    }
+    .history-box-left {
+      color: #ffffff;
+      font-family: "Inter-Bold", sans-serif;
+      font-size: 36px;
+      font-weight: 700;
+    }
+    .history-box-right {
+      display: flex;
+      /* flex-direction: column; */
+      /* gap: 20px; */
+      flex-shrink: 0;
+      width: 612px;
+      height: 373px;
+      position: static;
+    }
+    .history-box-right-line {
+      /* border-left: 4px solid #ffffff; */
+      height: 100%;
+      position: relative;
+      margin-left: 20px;
+    }
+    .history-box-right-text {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      position: relative;
+      margin-left: 40px;
+    }
+    .history-box-right-text-box {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .history-box-right-text-box-title {
+      color: #ffffff;
+      font-family: "Inter-Bold", sans-serif;
+      font-size: 24px;
+      font-weight: 700;
+    }
+    .history-box-right-text-box-text {
+      color: #c9c9c9;
+      font-family: "Inter-Regular", sans-serif;
+      font-size: 20px;
+      line-height: 1.5;
+    }
+  </style>
   <section id="history" class="page-section">
-    <div>
-      <div>활동이력력</div>
-      <div></div>
-      <div></div>
+    <div class = "history-box">
+      <div class = "history-box-left">활동이력</div>
+      <div class = "history-box-right">
+        <div class = "history-box-right-line">
+          <img src="./img/history.svg">
+        </div>
+        <div class = "history-box-right-text">
+          <div class="history-box-right-text-box">
+            <div class="history-box-right-text-box-title">
+              2024
+            </div>
+            <div class="history-box-right-text-box-text">
+              <div>
+                AlLerGy 동아리 창설
+              </div>
+              <div>
+                정기모임 시작
+              </div>
+              
+            </div>
+          </div>
+          <div class="history-box-right-text-box">
+            <div class="history-box-right-text-box-title">
+              2025
+            </div>
+            <div class="history-box-right-text-box-text">
+              <div>
+                방학 정기모임 진행
+              </div>
+              <div>
+                동아리 홈페이지 자체 제작
+              </div>
+              <div>
+                프로그래밍 경진대회 주최
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -485,8 +794,9 @@
             info
         </div>
         <div class="footer-box-context">
+          지도교수 : 이동재<br>
             회장 : 김이든<br>
-            지도교수 : 이동재<br>
+            
             email : rladlems1031@gmail.com
         </div>
         <div class="footer-box-context">
