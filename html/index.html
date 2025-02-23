@@ -5,6 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>AlLerGy Page</title>
   <style>
+    /* ==============================
+       1) 기본 전체 스타일
+       ============================== */
     html, body {
       margin: 0;
       padding: 0;
@@ -14,6 +17,9 @@
       font-family: Arial, sans-serif;
       background: #24273A;
     }
+
+    /* section마다 높이를 크게 주고 싶다면 유지 */
+    /* 필요에 따라 삭제 가능 */
     section {
       min-height: 100vh;
       display: flex;
@@ -21,38 +27,18 @@
       justify-content: center;
       position: relative;
     }
-    #hero {
-        position: relative;
-        background: url('./img/a.png') no-repeat center center/cover;
-        color: white;
-        font-size: 5rem;
-        text-align: center;
-        z-index: 1;
-        width: 100%;
-    }
 
-    #hero::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: rgba(0, 0, 0, 0.40);
-        backdrop-filter: blur(12px);
-        z-index: -1;
-    }
-
+    /* ==============================
+       2) 헤더 & 푸터, 공통 요소
+       ============================== */
     header {
-    display: flex;
-    align-items: center;
+      display: flex;
+      align-items: center;
       position: fixed;
       top: 0;
       width: 100%;
-      display: flex;
       background: rgba(24, 25, 38, 0.40);
       backdrop-filter: blur(6px);
-      /* height: 69px; */
       padding: 12px 80px;
       gap: 80px;
       z-index: 1000;
@@ -65,12 +51,13 @@
     }
     header a {
       text-decoration: none;
-      color: #333;
+      color: #FFF; /* 헤더 a는 흰색으로 보이도록 */
       font-size: 1.2rem;
     }
+
     footer {
-    display: flex;
-    background: linear-gradient(rgba(0, 0, 0, 0.40), rgba(0, 0, 0, 0.40)), #24273A;
+      display: flex;
+      background: linear-gradient(rgba(0, 0, 0, 0.40), rgba(0, 0, 0, 0.40)), #24273A;
       text-align: center;
       height: 313px;
       padding: 0px 200px;
@@ -78,8 +65,9 @@
       box-sizing: border-box;
       justify-content: space-between;
       align-items: center;
-    flex-shrink: 0;
+      flex-shrink: 0;
     }
+
     .social-icons {
       position: fixed;
       bottom: 20px;
@@ -93,392 +81,267 @@
       font-size: 2rem;
       text-decoration: none;
     }
-    .page-section{
-        background: #24273A;
-    }
-    .header-allergy{
-        color: #ffffff;
-    text-align: left;
-    font-family: "Inter-Bold", sans-serif;
-    font-size: 24px;
-    font-weight: 700;
-    position: relative;
-    }
-    .header-g{
-        display: flex;
-        align-items: center;
-        gap: 40px;
-    }
-    .header-g a{
-        color: #FFF;
-        font-family: Inter;
-        font-size: 16px;
-        font-style: normal;
-        font-weight: 400;
-        line-height: normal;
-    }
-    .footer-box{
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 20px;
-    }
-    .footer-box-info{
-        color: #FFF;
-        font-family: Inter;
-        font-size: 32px;
-        font-style: normal;
-        font-weight: 600;
-        line-height: normal;
-    }
-    .footer-box-context{
-        width: 500px;
-        color: #c9c9c9;
-        font-family: "Inter-Medium", sans-serif, Inter;
-        font-size: 20px;
-        font-style: normal;
-        font-weight: 500;
-        line-height: normal;
-        text-align: left;
-    }
-    .header-allergy-mom{
-        display: flex;
-    flex-direction: row;
-    gap: 80px;
-    align-items: center;
-    justify-content: flex-start;
-    flex-shrink: 0;
-    position: relative;
-    }
-    .contact-box{
-        display: flex;
-    flex-direction: column;
-    gap: 60px;
-    align-items: center;
-    justify-content: flex-start;
-    position: absolute;
-    left: 50%;
-    translate: -50%;
-    top: 366px;
-    }
-    .contact-text{
-    color: #ffffff;
-    text-align: center;
-    font-family: "Inter-ExtraBold", sans-serif;
-    font-size: 64px;
-    font-weight: 800;
-    position: relative;
-    }
-    .contact-btn{
-    background: #305aa8;
-    border-radius: 13.5px;
-    padding: 10.12px 13.5px 10.12px 13.5px;
-    display: flex;
-    flex-direction: row;
-    gap: 8.44px;
-    align-items: center;
-    justify-content: center;
-    flex-shrink: 0;
-    position: relative;
-    color: #ffffff;
-    text-align: left;
-    font-family: "Inter-ExtraBold", sans-serif;
-    font-size: 36px;
-    font-weight: 800;
-    }
-    .hero-div{
-      display: flex;
-    flex-direction: column;
-    gap: 32px;
-    align-items: center;
-    justify-content: center;
-    position: absolute;
-    width: 500px;
-    }
-    .hero-div-div1{
+
+    /* ==============================
+       3) 헤더 내부 스타일
+       ============================== */
+    .header-allergy {
       color: #ffffff;
-    text-align: center;
-    font-family: "Inter-ExtraBold", sans-serif;
-    font-size: 128px;
-    font-weight: 800;
-    position: relative;
+      text-align: left;
+      font-family: "Inter-Bold", sans-serif;
+      font-size: 24px;
+      font-weight: 700;
+      position: relative;
     }
-    .hero-div-div2{
+    .header-g {
+      display: flex;
+      align-items: center;
+      gap: 40px;
+    }
+    .header-g a {
+      color: #FFF;
+      font-family: Inter;
+      font-size: 16px;
+      font-weight: 400;
+    }
+    .header-allergy-mom {
+      display: flex;
+      flex-direction: row;
+      gap: 80px;
+      align-items: center;
+      justify-content: flex-start;
+      flex-shrink: 0;
+      position: relative;
+    }
+
+    /* ==============================
+       4) Hero 섹션 (#hero)
+       ============================== */
+    #hero {
+      width: 100%;
+      background: url('./img/a.png') no-repeat center center / cover;
+      color: white;
+      font-size: 5rem;
+      text-align: center;
+      z-index: 1;
+      position: relative;
+    }
+    #hero::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0, 0, 0, 0.40);
+      backdrop-filter: blur(12px);
+      z-index: -1;
+    }
+
+    .hero-div {
+      /* 가운데 정렬 + 가로폭 제한 */
+      max-width: 800px;
+      width: 90%;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 32px;
+      align-items: center;
+      justify-content: center;
+      text-align: center; /* 중앙 정렬 */
+    }
+    .hero-div-div1 {
+      color: #ffffff;
+      font-family: "Inter-ExtraBold", sans-serif;
+      font-size: 128px;
+      font-weight: 800;
+      position: relative;
+    }
+    .hero-div-div2 {
       color: #c9c9c9;
-    text-align: left;
-    font-family: "Inter-Medium", sans-serif;
-    font-size: 36px;
-    font-weight: 500;
-    position: absolute;
-    left: 10px;
-    top: 187px;
+      font-family: "Inter-Medium", sans-serif;
+      font-size: 36px;
+      font-weight: 500;
+      text-align: center; /* 문구도 중앙정렬 */
+      /* 절대 위치 제거 */
     }
-    .hero-blue{
+    .hero-blue {
       display: inline;
       background: rgba(29, 51, 195, 0.6);
       border-radius: 4px;
       padding: 1px;
     }
-  </style>
-  <script>
-    window.addEventListener('scroll', function() {
-      const header = document.querySelector('header');
-      if(window.scrollY > window.innerHeight - 50) {
-        header.classList.add('show');
-      } else {
-        header.classList.remove('show');
-      }
-    });
-  </script>
-</head>
-<body>
-  <section id="hero">
-    <div class="hero-div">
-      <div class="hero-div-div1">
-        AlLerGy
-      </div>
-      <div class="hero-div-div2">
-        Kangwon National University<br>
-        <div class="hero-blue">Al</div>gorithm <div class="hero-blue">L</div>ov<div class="hero-blue">er</div>'s <div class="hero-blue">Gy</div>m
-      </div>
-    </div>
-  </section>
-  <header class="header1">
-    <div class="header-allergy-mom">
-        <a href="#allergy" class="header-allergy">AlLerGy</a>
-    </div>
-    <div class="header-g">
-    <a href="#activity">모임활동</a>
-    <a href="#members">동아리부원</a>
-    <a href="#history">활동이력</a>
-    <a href="#contact">문의</a>
-    </div>
-    
-  </header>
 
-  <style>
+    /* ==============================
+       5) allergy 섹션 (#allergy)
+       ============================== */
     .allergy-box {
+      /* 절대 위치 제거 -> 일반 문서 흐름에서 가운데 정렬 */
       display: flex;
       flex-direction: row;
-      
+      align-items: center;
+      justify-content: center;
+      gap: 20px;
+      max-width: 1100px;
+      width: 90%;
+      margin: 0 auto;
     }
     .allergy-box-text {
-    min-width: 500px;
-    background: rgba(0, 0, 0, 0.4);
-    border-radius: 40px;
-    padding: 40px;
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-    align-items: flex-start;
-    justify-content: flex-start;
-    width: 30vw;
-    position: absolute;
-    /* left: 871px; */
-    /* top: calc(50% - 219px); */
-    backdrop-filter: blur(1.87px);
-    }
-    .allergy-box-title {
-      display: flex;
-    flex-direction: row;
-    gap: 14px;
-    align-items: flex-end;
-    justify-content: center;
-    flex-shrink: 0;
-    }
-    .allergy-box-title1 {
-      color: #ffffff;
-    text-align: left;
-    font-family: "Inter-Bold", sans-serif;
-    font-size: 32px;
-    font-weight: 700;
-    position: relative;
-    }
-    .allergy-box-title2 {
-      color: #c9c9c9;
-      text-align: left;
-      font-family: "Inter-Medium", sans-serif;
-      font-size: 16px;
-      font-weight: 500;
-      /* left: 10px;
-      top: 187px; */
-    }
-    .allergy-box-line {
-      margin-top: -4px;
-    border-style: solid;
-    border-color: #ffffff;
-    border-width: 4px 0 0 0;
-    flex-shrink: 0;
-    width: 100%;
-    height: 0px;
-    position: relative;
-    }
-    .allergy-box-context {
-      color: #ffffff;
-    text-align: left;
-    font-family: "Inter-Regular", sans-serif;
-    font-size: 20px;
-    line-height: 170%;
-    font-weight: 400;
-    position: relative;
-    align-self: stretch;
-    }
-  </style>
-  <section id="allergy" class="page-section">
-    <div class="allergy-box">
-      <div>
-        <img src="./img/ps/lo.svg">
-      </div>
-      <div class="allergy-box-text">
-        <div class="allergy-box-title">
-          <div class="allergy-box-title1">
-            AlLerGy
-          </div>
-          <div class="allergy-box-title2">
-            Algorithm Lever's Gym
-          </div>
-        </div>
-        <div class="allergy-box-line"></div>
-        <div class="allergy-box-context">
-          Algorithm Lever's Gym은 알고리즘을 사랑하는 사람들의 동아리로, 
-          알고리즘 스터디, 코딩 대회 준비 등을 중심으로 운영되고 있어요.
-          가입을 위해서는 초보자 실력자 구분 없이, 알고리즘을 통해 문제를 해결하고, 
-          새로운 가능성을 탐구하고 싶어하면 충분하답니다.
-        </div>
-      </div>
-    </div>
-  </section>
-  <style>
-    .activity-box {
       background: rgba(0, 0, 0, 0.4);
-    border-radius: 40px;
-    padding: 0px 40px 0px 0px;
-    display: flex;
-    flex-direction: row;
-    gap: 60px;
-    align-items: center;
-    justify-content: flex-start;
-    position: absolute;
-    left: 50%;
-    translate: -50% -50%;
-    
-    padding-right: 30px;
-    top: 50%;
-    }
-    .activity-box-title {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-    align-items: flex-start;
-    justify-content: flex-start;
-    flex-shrink: 0;
-    }
-    .activity-box-title1 {
-      color: #ffffff;
-    text-align: left;
-    font-family: "Inter-Bold", sans-serif;
-    font-size: 36px;
-    font-weight: 700;
-    position: relative;
-    }
-    .activity-box-title2 {
-      color: #c9c9c9;
-      text-align: left;
-      font-family: "Inter-Medium", sans-serif;
-      font-size: 20px;
-      font-weight: 500;
-      /* left: 10px;
-      top: 187px; */
-    }
-    .activity-box-line {
-      margin-top: -4px;
-    border-style: solid;
-    border-color: #ffffff;
-    border-width: 4px 0 0 0;
-    flex-shrink: 0;
-    width: 80%;
-    height: 0px;
-    position: relative;
-    }
-    .activity-box-txt-box {
-      display: flex;
-    flex-direction: column;
-    gap: 12px;
-    align-items: flex-start;
-    justify-content: flex-start;
-    position: relative;
-    min-width: 250px;
-    }
-    .activity-box-context{
-      color: #ffffff;
-    text-align: left;
-    font-family: "Inter-Regular", sans-serif;
-    font-size: 22px;
-    line-height: 170%;
-    font-weight: 400;
-    position: relative;
-    }
-    .activity-box-image {
-      padding: 20px;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    align-items: flex-start;
-    justify-content: flex-start;
-    flex-shrink: 0;
-    width: 500px;
-    position: relative;
-    }
-  </style>
-  <section id="activity" class="page-section">
-    <div class="activity-box">
-      <div class="activity-box-image">
-        <img src="./img/image-20.png" alt="algorithm" style="width: 500px">
-         
-      </div>
-      <div class="activity-box-txt-box">
-        <div class="activity-box-title">
-          <div class="activity-box-title1">
-            모임활동
-          </div>
-          <div class="activity-box-title2">
-            매주 교수님과 함께 진행
-          </div>
-        </div>  
-        <div class="activity-box-line"></div>
-        <div class="activity-box-context">
-          매주 백준, 프로그래머스 등을 통해 알고리즘 문제 풀이
-          교수님과 멘토를 통한 질의 응답
-          모임 후, 그날 못푼 문제 배당하여 복습 풀이
-          정기 모임활동 때마다 저녁 제공
-        </div>
-      </div>
-    </div>
-  </section>
-  <style>
-    .members-box {
+      border-radius: 40px;
       padding: 40px;
       display: flex;
-      flex-direction: row;
+      flex-direction: column;
       gap: 12px;
       align-items: flex-start;
       justify-content: flex-start;
-      position: absolute;
-      left: 50%;
-      translate: -50% -50%;
-      top: 50%;
-      width: 90%;
-      flex-wrap: wrap;
+      /* 유동 폭 */
+      max-width: 500px;
+      width: 100%;
+      backdrop-filter: blur(1.87px);
+    }
+    .allergy-box-title {
+      display: flex;
+      flex-direction: row;
+      gap: 14px;
+      align-items: flex-end;
       justify-content: center;
+      flex-shrink: 0;
+    }
+    .allergy-box-title1 {
+      color: #ffffff;
+      font-family: "Inter-Bold", sans-serif;
+      font-size: 32px;
+      font-weight: 700;
+      position: relative;
+    }
+    .allergy-box-title2 {
+      color: #c9c9c9;
+      font-family: "Inter-Medium", sans-serif;
+      font-size: 16px;
+      font-weight: 500;
+    }
+    .allergy-box-line {
+      margin-top: -4px;
+      border-style: solid;
+      border-color: #ffffff;
+      border-width: 4px 0 0 0;
+      flex-shrink: 0;
+      width: 100%;
+      height: 0px;
+      position: relative;
+    }
+    .allergy-box-context {
+      color: #ffffff;
+      font-family: "Inter-Regular", sans-serif;
+      font-size: 20px;
+      line-height: 170%;
+      font-weight: 400;
+      position: relative;
+      align-self: stretch;
+    }
+
+    /* ==============================
+       6) activity 섹션 (#activity)
+       ============================== */
+    .activity-box {
+      background: rgba(0, 0, 0, 0.4);
+      border-radius: 40px;
+      display: flex;
+      flex-direction: row;
+      gap: 60px;
+      align-items: center;
+      justify-content: space-between;
+      /* 절대 위치 제거 -> 가운데 정렬 */
+      max-width: 1100px;
+      width: 90%;
+      margin: 0 auto;
+      padding: 20px;
+    }
+    .activity-box-image {
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      align-items: flex-start;
+      justify-content: flex-start;
+      flex-shrink: 0;
+      max-width: 500px;
+      width: 100%;
+    }
+    .activity-box-txt-box {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      align-items: flex-start;
+      justify-content: flex-start;
+      position: relative;
+      min-width: 250px;
+      /* 유동 폭을 위해 max-width 정도만 지정 가능 */
+      max-width: 500px;
+      width: 100%;
+    }
+    .activity-box-title {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      align-items: flex-start;
+      justify-content: flex-start;
+      flex-shrink: 0;
+    }
+    .activity-box-title1 {
+      color: #ffffff;
+      font-family: "Inter-Bold", sans-serif;
+      font-size: 36px;
+      font-weight: 700;
+      position: relative;
+    }
+    .activity-box-title2 {
+      color: #c9c9c9;
+      font-family: "Inter-Medium", sans-serif;
+      font-size: 20px;
+      font-weight: 500;
+    }
+    .activity-box-line {
+      margin-top: -4px;
+      border-style: solid;
+      border-color: #ffffff;
+      border-width: 4px 0 0 0;
+      flex-shrink: 0;
+      width: 80%;
+      height: 0px;
+      position: relative;
+    }
+    .activity-box-context {
+      color: #ffffff;
+      font-family: "Inter-Regular", sans-serif;
+      font-size: 22px;
+      line-height: 170%;
+      font-weight: 400;
+      position: relative;
+    }
+
+    /* ==============================
+       7) members 섹션 (#members)
+       ============================== */
+    .members-box {
+      /* 절대 위치 제거 */
+      padding: 40px;
+      display: flex;
+      flex-direction: column; /* 큰 제목 + 컨텐츠 세로 배치 */
+      gap: 24px;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto;
+      max-width: 1100px;
+      width: 90%;
     }
     .members-box-title {
       color: #ffffff;
       font-size: 48px;
-      text-align: left;
       font-family: "Inter-ExtraBold", sans-serif;
       font-weight: 800;
       position: relative;
       align-self: stretch;
+      text-align: center; /* 중앙 정렬 */
       padding: 40px;
     }
     .members-box-context {
@@ -492,6 +355,7 @@
       justify-content: flex-start;
       flex-shrink: 0;
       position: relative;
+      width: 100%;
     }
     .members-box-context-div {
       display: flex;
@@ -502,231 +366,101 @@
       flex-shrink: 0;
       position: relative;
     }
-    .members-box-context-memebers {
+    .members-box-context-title {
+      color: #ffffff;
+      font-size: 24px;
+      font-family: "Inter-Bold", sans-serif;
+    }
+    .members-box-context-member-containers {
+      display: grid;
+      gap: 30px;
+      padding: 20px;
+      max-width: 800px;
+      width: 100%;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    }
+    .members-container {
+      background: #303030;
+      border-radius: 12px;
+      padding: 8px 12px;
       display: flex;
-      flex-direction: column;
-      gap: 39px;
+      flex-direction: row;
+      gap: 8px;
       align-items: center;
       justify-content: flex-start;
       flex-shrink: 0;
+      width: 100%;
+      max-width: 207px; /* 기존 207px 유지 (원한다면 제거 가능) */
+      position: relative;
+      box-shadow: 0px 0px 4px 0px rgba(39, 226, 164, 1);
+    }
+    .members-container-context {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      align-items: flex-start;
+      justify-content: flex-start;
+      flex-shrink: 0;
+      width: 125px;
       position: relative;
     }
-    .members-container{
-      background: #303030;
-    border-radius: 12px;
-    padding: 8px 12px 8px 12px;
-    display: flex;
-    flex-direction: row;
-    gap: 8px;
-    align-items: center;
-    justify-content: flex-start;
-    flex-shrink: 0;
-    width: 207px;
-    position: relative;
-    box-shadow: 0px 0px 4px 0px rgba(39, 226, 164, 1);
-    }
-    .members-container-context{
-      display: flex;
-    flex-direction: column;
-    gap: 8px;
-    align-items: flex-start;
-    justify-content: flex-start;
-    flex-shrink: 0;
-    width: 125px;
-    position: relative;
-    }
-    .members-container-context-id{
+    .members-container-context-id {
       color: #ffffff;
-    text-align: left;
-    font-family: "Inter-Bold", sans-serif;
-    font-size: 24px;
-    font-weight: 700;
-    position: relative;
-    align-self: stretch;
+      font-family: "Inter-Bold", sans-serif;
+      font-size: 24px;
+      font-weight: 700;
+      position: relative;
+      align-self: stretch;
     }
-    .members-container-context-text{
-    color: #ffffff;
-    text-align: left;
-    font-family: "Inter-Light", sans-serif;
-    font-size: 13px;
-    font-weight: 300;
-    position: relative;
-    align-self: stretch;
-    }
-    .members-box-context-title{
+    .members-container-context-text {
       color: #ffffff;
+      font-family: "Inter-Light", sans-serif;
+      font-size: 13px;
+      font-weight: 300;
+      position: relative;
+      align-self: stretch;
     }
-    .members-box-context-member-containers{
-    /* display: flex;
-    flex-direction: column;
-    gap: 39px;
-    align-items: center;
-    justify-content: flex-start;
-    flex-shrink: 0;
-    position: relative; */
-    display: grid;
-    gap: 30px;
-    padding: 20px;
-    /* width: 90%; */
-    max-width: 800px;
-    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-    }
-  </style>
-  <section id="members" class="page-section">
-    <div class="members-box">
-      <div class="members-box-title">
-        멤버 소개
-      </div>
-      <div class="members-box-context">
-        <div class="members-box-context-div">
-          <div class="members-box-context-title">
-            지도교수 / 동아리 대표
-          </div>
-          <div class="members-box-context-member-containers">
-            <div class="members-container">
-              <img src="./img/rank/p4.svg">
-              <div class="members-container-context">
-                <div class="members-container-context-id">
-                  d2d2d2
-                </div>
-                <div class="members-container-context-text">
-                  "알고리즘 너무 좋아요"
-                </div>
-              </div>
-            </div>
-            <div class="members-container">
-              <img src="./img/rank/p4.svg">
-              <div class="members-container-context">
-                <div class="members-container-context-id">
-                  d2d2d2
-                </div>
-                <div class="members-container-context-text">
-                  "알고리즘 너무 좋아요"
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="members-box-context-div">
-          <div class="members-box-context-title">
-            멤버
-          </div>
-          <div class="members-box-context-member-containers">
-            <div class="members-container">
-              <img src="./img/rank/p4.svg">
-              <div class="members-container-context">
-                <div class="members-container-context-id">
-                  d2d2d2
-                </div>
-                <div class="members-container-context-text">
-                  "알고리즘 너무 좋아요"
-                </div>
-              </div>
-            </div>
-            <div class="members-container">
-              <img src="./img/rank/p4.svg">
-              <div class="members-container-context">
-                <div class="members-container-context-id">
-                  d2d2d2
-                </div>
-                <div class="members-container-context-text">
-                  "알고리즘 너무 좋아요"
-                </div>
-              </div>
-            </div>
-            <div class="members-container">
-              <img src="./img/rank/p4.svg">
-              <div class="members-container-context">
-                <div class="members-container-context-id">
-                  d2d2d2
-                </div>
-                <div class="members-container-context-text">
-                  "알고리즘 너무 좋아요"
-                </div>
-              </div>
-            </div>
-            <div class="members-container">
-              <img src="./img/rank/p4.svg">
-              <div class="members-container-context">
-                <div class="members-container-context-id">
-                  d2d2d2
-                </div>
-                <div class="members-container-context-text">
-                  "알고리즘 너무 좋아요"
-                </div>
-              </div>
-            </div>
-            <div class="members-container">
-              <img src="./img/rank/p4.svg">
-              <div class="members-container-context">
-                <div class="members-container-context-id">
-                  d2d2d2
-                </div>
-                <div class="members-container-context-text">
-                  "알고리즘 너무 좋아요"
-                </div>
-              </div>
-            </div>
-            <div class="members-container">
-              <img src="./img/rank/p4.svg">
-              <div class="members-container-context">
-                <div class="members-container-context-id">
-                  d2d2d2
-                </div>
-                <div class="members-container-context-text">
-                  "알고리즘 너무 좋아요"
-                </div>
-              </div>
-            </div>
 
-          </div>
-        </div>
-        
-      </div>
-    </div>
-  </section>
-  <style>
+    /* ==============================
+       8) history 섹션 (#history)
+       ============================== */
     .history-box {
       display: flex;
       flex-direction: row;
-      gap: 356px;
+      gap: 60px; /* 356px → 반응형에 맞게 줄임 */
       align-items: flex-start;
       justify-content: flex-start;
-      position: absolute;
+      margin: 0 auto;
+      max-width: 1100px;
+      width: 90%;
       padding: 40px;
-      /* background: rgba(0, 0, 0, 0.4);
-      border-radius: 40px; */
-
-    /* left: 301px;
-    top: 351px; */
+      /* 절대 위치 제거 */
     }
     .history-box-left {
       color: #ffffff;
       font-family: "Inter-Bold", sans-serif;
       font-size: 36px;
       font-weight: 700;
+      /* 너비가 좁아지면 자동 줄바꿈 */
     }
     .history-box-right {
       display: flex;
-      /* flex-direction: column; */
-      /* gap: 20px; */
       flex-shrink: 0;
-      width: 612px;
-      height: 373px;
-      position: static;
+      width: 100%;
+      max-width: 612px;
+      position: relative; /* static or relative */
+      gap: 20px;
     }
     .history-box-right-line {
-      /* border-left: 4px solid #ffffff; */
-      height: 100%;
+      /* 세로 구분선 이미지 */
       position: relative;
-      margin-left: 20px;
+      margin-left: 0;
     }
     .history-box-right-text {
       display: flex;
       flex-direction: column;
       gap: 20px;
-      position: relative;
-      margin-left: 40px;
+      margin-left: 20px;
     }
     .history-box-right-text-box {
       display: flex;
@@ -745,42 +479,232 @@
       font-size: 20px;
       line-height: 1.5;
     }
+
+    /* ==============================
+       9) contact 섹션 (#contact)
+       ============================== */
+    #contact {
+      /* 원한다면 높이 조절 가능 (미디어쿼리에서 추가 조정 가능) */
+      min-height: 70vh;
+    }
+    .contact-box {
+      /* 절대 위치 제거 -> 가운데 배치 */
+      display: flex;
+      flex-direction: column;
+      gap: 60px;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto;
+      max-width: 1100px;
+      width: 90%;
+    }
+    .contact-text {
+      color: #ffffff;
+      text-align: center;
+      font-family: "Inter-ExtraBold", sans-serif;
+      font-size: 64px;
+      font-weight: 800;
+      position: relative;
+    }
+    .contact-btn {
+      background: #305aa8;
+      border-radius: 13.5px;
+      padding: 10.12px 13.5px;
+      display: flex;
+      flex-direction: row;
+      gap: 8.44px;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      position: relative;
+      color: #ffffff;
+      text-align: left;
+      font-family: "Inter-ExtraBold", sans-serif;
+      font-size: 36px;
+      font-weight: 800;
+      cursor: pointer; /* 버튼처럼 보이게 */
+    }
+
+    /* ==============================
+       10) footer 내부 스타일
+       ============================== */
+    .footer-box {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 20px;
+    }
+    .footer-box-info {
+      color: #FFF;
+      font-family: Inter;
+      font-size: 32px;
+      font-weight: 600;
+      line-height: normal;
+    }
+    .footer-box-context {
+      width: 500px;
+      color: #c9c9c9;
+      font-family: "Inter-Medium", sans-serif, Inter;
+      font-size: 20px;
+      font-weight: 500;
+      line-height: normal;
+      text-align: left;
+    }
   </style>
-  <section id="history" class="page-section">
-    <div class = "history-box">
-      <div class = "history-box-left">활동이력</div>
-      <div class = "history-box-right">
-        <div class = "history-box-right-line">
-          <img src="./img/history.svg">
+
+  <!-- 헤더 스크롤 이벤트 스크립트 -->
+  <script>
+    window.addEventListener('scroll', function() {
+      const header = document.querySelector('header');
+      if(window.scrollY > window.innerHeight - 50) {
+        header.classList.add('show');
+      } else {
+        header.classList.remove('show');
+      }
+    });
+  </script>
+</head>
+<body>
+  <!-- Hero Section -->
+  <section id="hero">
+    <div class="hero-div">
+      <div class="hero-div-div1">
+        AlLerGy
+      </div>
+      <div class="hero-div-div2">
+        Kangwon National University<br>
+        <div class="hero-blue">Al</div>gorithm <div class="hero-blue">L</div>ov
+        <div class="hero-blue">er</div>'s <div class="hero-blue">Gy</div>m
+      </div>
+    </div>
+  </section>
+
+  <!-- Header -->
+  <header class="header1">
+    <div class="header-allergy-mom">
+      <a href="#allergy" class="header-allergy">AlLerGy</a>
+    </div>
+    <div class="header-g">
+      <a href="#activity">모임활동</a>
+      <a href="#members">동아리부원</a>
+      <a href="#history">활동이력</a>
+      <a href="#contact">문의</a>
+    </div>
+  </header>
+
+  <!-- allergy Section -->
+  <section id="allergy" class="page-section">
+    <div class="allergy-box">
+      <div>
+        <img src="./img/ps/lo.svg" alt="lo image">
+      </div>
+      <div class="allergy-box-text">
+        <div class="allergy-box-title">
+          <div class="allergy-box-title1">AlLerGy</div>
+          <div class="allergy-box-title2">Algorithm Lever's Gym</div>
         </div>
-        <div class = "history-box-right-text">
-          <div class="history-box-right-text-box">
-            <div class="history-box-right-text-box-title">
-              2024
+        <div class="allergy-box-line"></div>
+        <div class="allergy-box-context">
+          Algorithm Lever's Gym은 알고리즘을 사랑하는 사람들의 동아리로,
+          알고리즘 스터디, 코딩 대회 준비 등을 중심으로 운영되고 있어요.
+          가입을 위해서는 초보자 실력자 구분 없이, 알고리즘을 통해 문제를 해결하고,
+          새로운 가능성을 탐구하고 싶어하면 충분하답니다.
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- activity Section -->
+  <section id="activity" class="page-section">
+    <div class="activity-box">
+      <div class="activity-box-image">
+        <img src="./img/image-20.png" alt="algorithm" style="width: 100%; border-radius: 8px;">
+      </div>
+      <div class="activity-box-txt-box">
+        <div class="activity-box-title">
+          <div class="activity-box-title1">모임활동</div>
+          <div class="activity-box-title2">매주 교수님과 함께 진행</div>
+        </div>
+        <div class="activity-box-line"></div>
+        <div class="activity-box-context">
+          매주 백준, 프로그래머스 등을 통해 알고리즘 문제 풀이<br>
+          교수님과 멘토를 통한 질의 응답<br>
+          모임 후, 그날 못푼 문제 배당하여 복습 풀이<br>
+          정기 모임활동 때마다 저녁 제공
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- members Section -->
+  <section id="members" class="page-section">
+    <div class="members-box">
+      <div class="members-box-title">
+        멤버 소개
+      </div>
+      <div class="members-box-context">
+        <div class="members-box-context-div">
+          <div class="members-box-context-title">지도교수 / 동아리 대표</div>
+          <div class="members-box-context-member-containers">
+            <div class="members-container">
+              <img src="./img/rank/p4.svg" alt="rank p4">
+              <div class="members-container-context">
+                <div class="members-container-context-id">d2d2d2</div>
+                <div class="members-container-context-text">"알고리즘 너무 좋아요"</div>
+              </div>
             </div>
-            <div class="history-box-right-text-box-text">
-              <div>
-                AlLerGy 동아리 창설
+            <div class="members-container">
+              <img src="./img/rank/p4.svg" alt="rank p4">
+              <div class="members-container-context">
+                <div class="members-container-context-id">d2d2d2</div>
+                <div class="members-container-context-text">"알고리즘 너무 좋아요"</div>
               </div>
-              <div>
-                정기모임 시작
-              </div>
-              
             </div>
           </div>
-          <div class="history-box-right-text-box">
-            <div class="history-box-right-text-box-title">
-              2025
+        </div>
+        <div class="members-box-context-div">
+          <div class="members-box-context-title">멤버</div>
+          <div class="members-box-context-member-containers">
+            <div class="members-container">
+              <img src="./img/rank/p4.svg" alt="rank p4">
+              <div class="members-container-context">
+                <div class="members-container-context-id">d2d2d2</div>
+                <div class="members-container-context-text">"알고리즘 너무 좋아요"</div>
+              </div>
             </div>
-            <div class="history-box-right-text-box-text">
-              <div>
-                방학 정기모임 진행
+            <div class="members-container">
+              <img src="./img/rank/p4.svg" alt="rank p4">
+              <div class="members-container-context">
+                <div class="members-container-context-id">d2d2d2</div>
+                <div class="members-container-context-text">"알고리즘 너무 좋아요"</div>
               </div>
-              <div>
-                동아리 홈페이지 자체 제작
+            </div>
+            <div class="members-container">
+              <img src="./img/rank/p4.svg" alt="rank p4">
+              <div class="members-container-context">
+                <div class="members-container-context-id">d2d2d2</div>
+                <div class="members-container-context-text">"알고리즘 너무 좋아요"</div>
               </div>
-              <div>
-                프로그래밍 경진대회 주최
+            </div>
+            <div class="members-container">
+              <img src="./img/rank/p4.svg" alt="rank p4">
+              <div class="members-container-context">
+                <div class="members-container-context-id">d2d2d2</div>
+                <div class="members-container-context-text">"알고리즘 너무 좋아요"</div>
+              </div>
+            </div>
+            <div class="members-container">
+              <img src="./img/rank/p4.svg" alt="rank p4">
+              <div class="members-container-context">
+                <div class="members-container-context-id">d2d2d2</div>
+                <div class="members-container-context-text">"알고리즘 너무 좋아요"</div>
+              </div>
+            </div>
+            <div class="members-container">
+              <img src="./img/rank/p4.svg" alt="rank p4">
+              <div class="members-container-context">
+                <div class="members-container-context-id">d2d2d2</div>
+                <div class="members-container-context-text">"알고리즘 너무 좋아요"</div>
               </div>
             </div>
           </div>
@@ -789,36 +713,74 @@
     </div>
   </section>
 
-  <section id="contact" class="page-section" style="height: 70%; min-height: 70vh;">
-    <div class ="contact-box">
-        <div class="contact-text">  
-          AlLerGy와 함께<br>알고리즘에 도전해봐요
+  <!-- history Section -->
+  <section id="history" class="page-section">
+    <div class="history-box">
+      <div class="history-box-left">활동이력</div>
+      <div class="history-box-right">
+        <div class="history-box-right-line">
+          <img src="./img/history.svg" alt="history line">
         </div>
-        <div class="contact-btn">
-            문의하기
+        <div class="history-box-right-text">
+          <div class="history-box-right-text-box">
+            <div class="history-box-right-text-box-title">2024</div>
+            <div class="history-box-right-text-box-text">
+              <div>AlLerGy 동아리 창설</div>
+              <div>정기모임 시작</div>
+            </div>
+          </div>
+          <div class="history-box-right-text-box">
+            <div class="history-box-right-text-box-title">2025</div>
+            <div class="history-box-right-text-box-text">
+              <div>방학 정기모임 진행</div>
+              <div>동아리 홈페이지 자체 제작</div>
+              <div>프로그래밍 경진대회 주최</div>
+            </div>
+          </div>
         </div>
+      </div>
     </div>
- </section>
+  </section>
+
+  <!-- contact Section -->
+  <section id="contact" class="page-section" style="min-height: 70vh;">
+    <div class="contact-box">
+      <div class="contact-text">
+        AlLerGy와 함께<br>알고리즘에 도전해봐요
+      </div>
+      <div class="contact-btn">
+        문의하기
+      </div>
+    </div>
+  </section>
+
+  <!-- SNS 아이콘 (고정) -->
   <div class="social-icons">
-    <a href="https://github.com/AlLerGy-KNU"><img class="frame11" src="./img/frame10.svg"></a>
-    <a href=""><img class="frame12" src="./img/frame11.svg"></a>
-    <a href="mailto:test@example.com"><img class="message-alt-fill6" src="./img/message-alt-fill5.svg"></a>
+    <a href="https://github.com/AlLerGy-KNU">
+      <img class="frame11" src="./img/frame10.svg" alt="github">
+    </a>
+    <a href="">
+      <img class="frame12" src="./img/frame11.svg" alt="another link">
+    </a>
+    <a href="mailto:test@example.com">
+      <img class="message-alt-fill6" src="./img/message-alt-fill5.svg" alt="email link">
+    </a>
   </div>
 
+  <!-- Footer -->
   <footer>
     <div class="footer-box">
-        <div class="footer-box-info">
-            info
-        </div>
-        <div class="footer-box-context">
-          지도교수 : 이동재<br>
-            회장 : 김이든<br>
-            
-            email : rladlems1031@gmail.com
-        </div>
-        <div class="footer-box-context">
-          © 2025 AlLerGy. All rights reserved.
-        </div>
+      <div class="footer-box-info">
+        info
+      </div>
+      <div class="footer-box-context">
+        지도교수 : 이동재<br>
+        회장 : 김이든<br>
+        email : rladlems1031@gmail.com
+      </div>
+      <div class="footer-box-context">
+        © 2025 AlLerGy. All rights reserved.
+      </div>
     </div>
   </footer>
 </body>
