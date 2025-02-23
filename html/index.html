@@ -16,10 +16,10 @@
       scroll-behavior: smooth;
       font-family: Arial, sans-serif;
       background: #24273A;
+      overflow-x: hidden; 
     }
 
-    /* section마다 높이를 크게 주고 싶다면 유지 */
-    /* 필요에 따라 삭제 가능 */
+    /* section은 기본적으로 100vh로 세팅 */
     section {
       min-height: 100vh;
       display: flex;
@@ -51,21 +51,43 @@
     }
     header a {
       text-decoration: none;
-      color: #FFF; /* 헤더 a는 흰색으로 보이도록 */
+      color: #FFF;
       font-size: 1.2rem;
     }
 
     footer {
       display: flex;
+      flex-direction: column;
       background: linear-gradient(rgba(0, 0, 0, 0.40), rgba(0, 0, 0, 0.40)), #24273A;
       text-align: center;
-      height: 313px;
-      padding: 0px 200px;
-      width: 100%;
+      padding: 40px;
       box-sizing: border-box;
-      justify-content: space-between;
       align-items: center;
+      justify-content: center;
       flex-shrink: 0;
+    }
+
+    .footer-box {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      max-width: 800px;
+      width: 100%;
+    }
+    .footer-box-info {
+      color: #FFF;
+      font-family: Inter;
+      font-size: 32px;
+      font-weight: 600;
+    }
+    .footer-box-context {
+      color: #c9c9c9;
+      font-family: "Inter-Medium", sans-serif;
+      font-size: 20px;
+      font-weight: 500;
+      line-height: normal;
+      text-align: left;
+      width: 100%;
     }
 
     .social-icons {
@@ -82,9 +104,6 @@
       text-decoration: none;
     }
 
-    /* ==============================
-       3) 헤더 내부 스타일
-       ============================== */
     .header-allergy {
       color: #ffffff;
       text-align: left;
@@ -115,11 +134,11 @@
     }
 
     /* ==============================
-       4) Hero 섹션 (#hero)
+       3) Hero 섹션 (#hero)
        ============================== */
     #hero {
       width: 100%;
-      background: url('./img/a.png') no-repeat center center / cover;
+      background: url("./img/a.png") no-repeat center center / cover;
       color: white;
       font-size: 5rem;
       text-align: center;
@@ -137,7 +156,6 @@
     }
 
     .hero-div {
-      /* 가운데 정렬 + 가로폭 제한 */
       max-width: 800px;
       width: 90%;
       margin: 0 auto;
@@ -146,22 +164,21 @@
       gap: 32px;
       align-items: center;
       justify-content: center;
-      text-align: center; /* 중앙 정렬 */
+      text-align: center;
+      padding: 40px 0;
     }
     .hero-div-div1 {
       color: #ffffff;
       font-family: "Inter-ExtraBold", sans-serif;
       font-size: 128px;
       font-weight: 800;
-      position: relative;
     }
     .hero-div-div2 {
       color: #c9c9c9;
       font-family: "Inter-Medium", sans-serif;
       font-size: 36px;
       font-weight: 500;
-      text-align: center; /* 문구도 중앙정렬 */
-      /* 절대 위치 제거 */
+      text-align: center;
     }
     .hero-blue {
       display: inline;
@@ -171,10 +188,9 @@
     }
 
     /* ==============================
-       5) allergy 섹션 (#allergy)
+       4) allergy 섹션 (#allergy)
        ============================== */
     .allergy-box {
-      /* 절대 위치 제거 -> 일반 문서 흐름에서 가운데 정렬 */
       display: flex;
       flex-direction: row;
       align-items: center;
@@ -183,6 +199,8 @@
       max-width: 1100px;
       width: 90%;
       margin: 0 auto;
+      flex-wrap: wrap; /* 래핑 */
+      padding: 40px 0;
     }
     .allergy-box-text {
       background: rgba(0, 0, 0, 0.4);
@@ -193,7 +211,6 @@
       gap: 12px;
       align-items: flex-start;
       justify-content: flex-start;
-      /* 유동 폭 */
       max-width: 500px;
       width: 100%;
       backdrop-filter: blur(1.87px);
@@ -240,7 +257,7 @@
     }
 
     /* ==============================
-       6) activity 섹션 (#activity)
+       5) activity 섹션 (#activity)
        ============================== */
     .activity-box {
       background: rgba(0, 0, 0, 0.4);
@@ -250,11 +267,11 @@
       gap: 60px;
       align-items: center;
       justify-content: space-between;
-      /* 절대 위치 제거 -> 가운데 정렬 */
       max-width: 1100px;
       width: 90%;
       margin: 0 auto;
       padding: 20px;
+      flex-wrap: wrap;
     }
     .activity-box-image {
       padding: 20px;
@@ -275,7 +292,6 @@
       justify-content: flex-start;
       position: relative;
       min-width: 250px;
-      /* 유동 폭을 위해 max-width 정도만 지정 가능 */
       max-width: 500px;
       width: 100%;
     }
@@ -320,13 +336,12 @@
     }
 
     /* ==============================
-       7) members 섹션 (#members)
+       6) members 섹션 (#members)
        ============================== */
     .members-box {
-      /* 절대 위치 제거 */
       padding: 40px;
       display: flex;
-      flex-direction: column; /* 큰 제목 + 컨텐츠 세로 배치 */
+      flex-direction: column;
       gap: 24px;
       align-items: center;
       justify-content: center;
@@ -341,7 +356,7 @@
       font-weight: 800;
       position: relative;
       align-self: stretch;
-      text-align: center; /* 중앙 정렬 */
+      text-align: center;
       padding: 40px;
     }
     .members-box-context {
@@ -390,7 +405,7 @@
       justify-content: flex-start;
       flex-shrink: 0;
       width: 100%;
-      max-width: 207px; /* 기존 207px 유지 (원한다면 제거 가능) */
+      max-width: 207px;
       position: relative;
       box-shadow: 0px 0px 4px 0px rgba(39, 226, 164, 1);
     }
@@ -422,37 +437,36 @@
     }
 
     /* ==============================
-       8) history 섹션 (#history)
+       7) history 섹션 (#history)
        ============================== */
     .history-box {
       display: flex;
       flex-direction: row;
-      gap: 60px; /* 356px → 반응형에 맞게 줄임 */
+      gap: 60px;
       align-items: flex-start;
       justify-content: flex-start;
       margin: 0 auto;
       max-width: 1100px;
       width: 90%;
       padding: 40px;
-      /* 절대 위치 제거 */
+      flex-wrap: wrap;
     }
     .history-box-left {
       color: #ffffff;
       font-family: "Inter-Bold", sans-serif;
       font-size: 36px;
       font-weight: 700;
-      /* 너비가 좁아지면 자동 줄바꿈 */
+      min-width: 200px;
     }
     .history-box-right {
       display: flex;
       flex-shrink: 0;
       width: 100%;
       max-width: 612px;
-      position: relative; /* static or relative */
+      position: relative;
       gap: 20px;
     }
     .history-box-right-line {
-      /* 세로 구분선 이미지 */
       position: relative;
       margin-left: 0;
     }
@@ -481,14 +495,12 @@
     }
 
     /* ==============================
-       9) contact 섹션 (#contact)
+       8) contact 섹션 (#contact)
        ============================== */
     #contact {
-      /* 원한다면 높이 조절 가능 (미디어쿼리에서 추가 조정 가능) */
       min-height: 70vh;
     }
     .contact-box {
-      /* 절대 위치 제거 -> 가운데 배치 */
       display: flex;
       flex-direction: column;
       gap: 60px;
@@ -497,6 +509,7 @@
       margin: 0 auto;
       max-width: 1100px;
       width: 90%;
+      padding: 40px 0;
     }
     .contact-text {
       color: #ffffff;
@@ -518,41 +531,115 @@
       flex-shrink: 0;
       position: relative;
       color: #ffffff;
-      text-align: left;
       font-family: "Inter-ExtraBold", sans-serif;
       font-size: 36px;
       font-weight: 800;
-      cursor: pointer; /* 버튼처럼 보이게 */
+      cursor: pointer;
     }
 
     /* ==============================
-       10) footer 내부 스타일
+       9) 반응형 미디어 쿼리:
+         - PC (min-width ~1200px)
+         - 노트북 (992px ~ 1199px)
+         - 태블릿 (768px ~ 991px)
+         - 작은 태블릿/폰 (576px ~ 767px)
+         - 휴대폰 (max-width: 575px)
+       단, 여기선 max-width 기준만 사용.
        ============================== */
-    .footer-box {
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-      gap: 20px;
-    }
-    .footer-box-info {
-      color: #FFF;
-      font-family: Inter;
-      font-size: 32px;
-      font-weight: 600;
-      line-height: normal;
-    }
-    .footer-box-context {
-      width: 500px;
-      color: #c9c9c9;
-      font-family: "Inter-Medium", sans-serif, Inter;
-      font-size: 20px;
-      font-weight: 500;
-      line-height: normal;
-      text-align: left;
-    }
-  </style>
 
-  <!-- 헤더 스크롤 이벤트 스크립트 -->
+    /* 데스크톱(가로 ~1199px) 이하 */
+    @media (max-width: 1199px) {
+      .hero-div-div1 {
+        font-size: 100px;
+      }
+    }
+
+    /* 노트북(가로 ~992px) 이하 */
+    @media (max-width: 992px) {
+      .hero-div-div1 {
+        font-size: 80px;
+      }
+      .activity-box-title1 {
+        font-size: 32px;
+      }
+      .members-box-title {
+        font-size: 40px;
+      }
+    }
+
+    /* 태블릿(가로 ~768px) 이하 */
+    @media (max-width: 768px) {
+      .hero-div-div1 {
+        font-size: 64px;
+      }
+      .hero-div-div2 {
+        font-size: 28px;
+      }
+      .contact-text {
+        font-size: 36px;
+      }
+      .activity-box {
+        gap: 30px;
+      }
+      .activity-box-title1 {
+        font-size: 28px;
+      }
+      .activity-box-context {
+        font-size: 20px;
+      }
+      .members-box-title {
+        font-size: 36px;
+      }
+      .members-box {
+        padding: 20px;
+      }
+    }
+
+    /* 작은 태블릿/폰 (가로 ~576px) 이하 */
+    @media (max-width: 576px) {
+      .hero-div-div1 {
+        font-size: 48px;
+      }
+      .hero-div-div2 {
+        font-size: 20px;
+      }
+      .footer-box {
+        padding: 0 10px;
+      }
+      .allergy-box-text {
+        padding: 20px;
+      }
+      .activity-box {
+        padding: 10px;
+      }
+      .members-box {
+        padding: 20px 0;
+      }
+    }
+
+    /* 휴대폰(가로 ~480px) 이하 */
+    @media (max-width: 480px) {
+      .hero-div-div1 {
+        font-size: 40px;
+      }
+      .hero-div-div2 {
+        font-size: 18px;
+      }
+      .activity-box-title1 {
+        font-size: 24px;
+      }
+      .contact-text {
+        font-size: 28px;
+      }
+      .contact-btn {
+        font-size: 20px;
+      }
+      .footer-box-info {
+        font-size: 20px;
+      }
+    }
+
+  </style>
   <script>
     window.addEventListener('scroll', function() {
       const header = document.querySelector('header');
@@ -596,7 +683,7 @@
   <section id="allergy" class="page-section">
     <div class="allergy-box">
       <div>
-        <img src="./img/ps/lo.svg" alt="lo image">
+        <img src="./img/ps/lo.svg" alt="lo image" style="max-width:200px; height:auto;">
       </div>
       <div class="allergy-box-text">
         <div class="allergy-box-title">
@@ -606,7 +693,7 @@
         <div class="allergy-box-line"></div>
         <div class="allergy-box-context">
           Algorithm Lever's Gym은 알고리즘을 사랑하는 사람들의 동아리로,
-          알고리즘 스터디, 코딩 대회 준비 등을 중심으로 운영되고 있어요.
+          알고리즘 스터디, 코딩 대회 준비 등을 중심으로 운영되고 있어요.<br>
           가입을 위해서는 초보자 실력자 구분 없이, 알고리즘을 통해 문제를 해결하고,
           새로운 가능성을 탐구하고 싶어하면 충분하답니다.
         </div>
@@ -719,7 +806,7 @@
       <div class="history-box-left">활동이력</div>
       <div class="history-box-right">
         <div class="history-box-right-line">
-          <img src="./img/history.svg" alt="history line">
+          <img src="./img/history.svg" alt="history line" style="max-width:100px; height:auto;">
         </div>
         <div class="history-box-right-text">
           <div class="history-box-right-text-box">
@@ -783,5 +870,17 @@
       </div>
     </div>
   </footer>
+
+  <script>
+    // 스크롤 시 헤더 보이기
+    window.addEventListener('scroll', function() {
+      const header = document.querySelector('header');
+      if(window.scrollY > window.innerHeight - 50) {
+        header.classList.add('show');
+      } else {
+        header.classList.remove('show');
+      }
+    });
+  </script>
 </body>
 </html>
