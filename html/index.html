@@ -556,13 +556,19 @@
       color: #ffffff;
     }
     .members-box-context-member-containers{
-    display: flex;
+    /* display: flex;
     flex-direction: column;
     gap: 39px;
     align-items: center;
     justify-content: flex-start;
     flex-shrink: 0;
-    position: relative;
+    position: relative; */
+    display: grid;
+    gap: 30px;
+    padding: 20px;
+    /* width: 90%; */
+    max-width: 800px;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
     }
   </style>
   <section id="members" class="page-section">
