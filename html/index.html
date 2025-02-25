@@ -190,6 +190,10 @@
     /* ==============================
        4) allergy 섹션 (#allergy)
        ============================== */
+    .ps-img{
+      max-width:400px;
+      height:auto;
+    }
     .allergy-box {
       display: flex;
       flex-direction: row;
@@ -266,9 +270,9 @@
       flex-direction: row;
       gap: 60px;
       align-items: center;
-      justify-content: space-between;
+      justify-content: center;  
       max-width: 1100px;
-      width: 90%;
+      /* width: 90%; */
       margin: 0 auto;
       padding: 20px;
       flex-wrap: wrap;
@@ -622,6 +626,9 @@
       .activity-box-context{  
         font-size: 16px;
       }
+      .ps-img{
+        max-width:300px;
+      }
     }
 
     /* 휴대폰(가로 ~480px) 이하 */
@@ -643,6 +650,9 @@
       }
       .footer-box-info {
         font-size: 20px;
+      }
+      .ps-img{
+        max-width:250px;
       }
     }
 
@@ -689,7 +699,7 @@
   <section id="allergy" class="page-section">
     <div class="allergy-box">
       <div>
-        <img src="./img/ps/lo.svg" alt="lo image" style="max-width:200px; height:auto;">
+        <img src="./img/ps/lo.svg" alt="lo image" class="ps-img">
       </div>
       <div class="allergy-box-text">
         <div class="allergy-box-title">
