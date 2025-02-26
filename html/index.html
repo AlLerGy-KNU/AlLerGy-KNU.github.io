@@ -4,7 +4,30 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>AlLerGy Page</title>
+  <link rel="icon" type="image/png" href="./img/logo/logo1x.png">
   <style>
+    /* 전체 페이지 스크롤바 */
+    ::-webkit-scrollbar {
+      width: 6px; /* 세로 스크롤바 너비 */
+      height: 6px; /* 가로 스크롤바 높이 */
+    }
+
+    /* 스크롤바 트랙 (배경) */
+    ::-webkit-scrollbar-track {
+      background: #222; /* 배경 색상 */
+      border-radius: 3px;
+    }
+
+    /* 스크롤바 핸들 (움직이는 부분) */
+    ::-webkit-scrollbar-thumb {
+      background: #4631ff; /* 기본 색상 */
+      border-radius: 3px;
+    }
+
+    /* 스크롤바 핸들에 호버 시 */
+    ::-webkit-scrollbar-thumb:hover {
+      background: #804eff; /* 호버 시 색상 */
+}
     /* ==============================
        1) 기본 전체 스타일
        ============================== */
@@ -75,15 +98,16 @@
       width: 100%;
     }
     .footer-box-info {
-      color: #FFF;
+      color: #c9c9c9;
       font-family: Inter;
-      font-size: 32px;
+      font-size: 24px;
       font-weight: 600;
+      /* display: none; */
     }
     .footer-box-context {
       color: #c9c9c9;
       font-family: "Inter-Medium", sans-serif;
-      font-size: 20px;
+      font-size: 14px;
       font-weight: 500;
       line-height: normal;
       text-align: left;
@@ -190,9 +214,18 @@
     /* ==============================
        4) allergy 섹션 (#allergy)
        ============================== */
+       @keyframes float {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-20px);
+            }
+        }
     .ps-img{
-      max-width:400px;
+      max-width:440px;
       height:auto;
+      animation: float 3s ease-in-out infinite;
     }
     .allergy-box {
       display: flex;
@@ -215,7 +248,7 @@
       gap: 12px;
       align-items: flex-start;
       justify-content: flex-start;
-      max-width: 500px;
+      max-width: 400px;
       width: 100%;
       backdrop-filter: blur(1.87px);
     }
@@ -230,7 +263,7 @@
     .allergy-box-title1 {
       color: #ffffff;
       font-family: "Inter-Bold", sans-serif;
-      font-size: 32px;
+      font-size: 28px;
       font-weight: 700;
       position: relative;
     }
@@ -253,7 +286,7 @@
     .allergy-box-context {
       color: #ffffff;
       font-family: "Inter-Regular", sans-serif;
-      font-size: 20px;
+      font-size: 18px;
       line-height: 170%;
       font-weight: 400;
       position: relative;
@@ -274,7 +307,8 @@
       max-width: 1100px;
       /* width: 90%; */
       margin: 0 auto;
-      padding: 20px;
+      padding: 15px 25px 15px 15px;
+
       flex-wrap: wrap;
     }
     .activity-box-image {
@@ -297,7 +331,7 @@
       position: relative;
       min-width: 250px;
       max-width: 500px;
-      width: 100%;
+      /* width: 100%; */
     }
     .activity-box-title {
       display: flex;
@@ -333,7 +367,7 @@
     .activity-box-context {
       color: #ffffff;
       font-family: "Inter-Regular", sans-serif;
-      font-size: 22px;
+      font-size: 18px;
       line-height: 170%;
       font-weight: 400;
       position: relative;
@@ -375,6 +409,8 @@
       flex-shrink: 0;
       position: relative;
       width: 100%;
+      overflow-y: auto;
+      max-height: 900px;
     }
     .members-box-context-div {
       display: flex;
@@ -397,6 +433,8 @@
       max-width: 800px;
       width: 100%;
       grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      max-height: 400px;
+      overflow: auto;
     }
     .members-container {
       background: #303030;
@@ -413,6 +451,11 @@
       position: relative;
       box-shadow: 0px 0px 4px 0px rgba(39, 226, 164, 1);
     }
+    .members-container img {
+      width: 50px;
+      height: 50px;
+      /* border-radius: 20%;S */
+    }
     .members-container-context {
       display: flex;
       flex-direction: column;
@@ -422,6 +465,7 @@
       flex-shrink: 0;
       width: 125px;
       position: relative;
+      width: 140px;
     }
     .members-container-context-id {
       color: #ffffff;
@@ -495,7 +539,6 @@
       font-size: 20px;
       line-height: 1.5;
     }
-
     /* ==============================
        8) contact 섹션 (#contact)
        ============================== */
@@ -598,6 +641,9 @@
       header{
         display: none;
       }
+      .members-box-context-member-containers {
+        grid-template-columns: 1fr 1fr;
+      } 
     }
 
     /* 작은 태블릿/폰 (가로 ~576px) 이하 */
@@ -654,6 +700,9 @@
       .ps-img{
         max-width:250px;
       }
+      .members-box-context-member-containers {
+        grid-template-columns: 1fr;
+      } 
     }
 
   </style>
@@ -699,7 +748,7 @@
   <section id="allergy" class="page-section">
     <div class="allergy-box">
       <div>
-        <img src="./img/ps/lo.svg" alt="lo image" class="ps-img">
+        <img src="./img/logo/logo2x.png" alt="lo image" class="ps-img">
       </div>
       <div class="allergy-box-text">
         <div class="allergy-box-title">
@@ -790,7 +839,7 @@
               </div>
             </div>
             <div class="members-container">
-              <img src="./img/rank/p4.svg" alt="rank p4">
+              <img src="./img/rank/p2.svg" alt="rank p4">
               <div class="members-container-context">
                 <div class="members-container-context-id">d2d2d2</div>
                 <div class="members-container-context-text">"알고리즘 너무 좋아요"</div>
@@ -851,9 +900,12 @@
       <div class="contact-text">
         AlLerGy와 함께<br>알고리즘에 도전해봐요
       </div>
-      <div class="contact-btn">
-        문의하기
-      </div>
+      <a style="text-decoration: none;" href="mailto:rladlems1031@gmail.com">
+        <div class="contact-btn">
+          문의하기
+        </div>
+      </a>
+      
     </div>
   </section>
 
@@ -862,10 +914,10 @@
     <a href="https://github.com/AlLerGy-KNU">
       <img class="frame11" src="./img/frame10.svg" alt="github">
     </a>
-    <a href="">
+    <!-- <a href="">
       <img class="frame12" src="./img/frame11.svg" alt="another link">
-    </a>
-    <a href="mailto:test@example.com">
+    </a> -->
+    <a href="mailto:rladlems1031@gmail.com">
       <img class="message-alt-fill6" src="./img/message-alt-fill5.svg" alt="email link">
     </a>
   </div>
@@ -874,7 +926,7 @@
   <footer>
     <div class="footer-box">
       <div class="footer-box-info">
-        info
+        AlLerGy
       </div>
       <div class="footer-box-context">
         지도교수 : 이동재<br>
