@@ -328,6 +328,13 @@ wschoi789,s1,"""ps는 Problem Solving"""
       height:auto;
       animation: float 3s ease-in-out infinite;
     }
+    .ps-front-img{
+      max-width:470px;
+      z-index: 9;
+      position: absolute;
+      /* top: 30%; */
+      /* transform: translate(-50%, -50%); */
+    }
     .allergy-box {
       display: flex;
       flex-direction: row;
@@ -339,6 +346,15 @@ wschoi789,s1,"""ps는 Problem Solving"""
       margin: 0 auto;
       flex-wrap: wrap; /* 래핑 */
       padding: 40px 0;
+      
+    }
+    .allergy-box-image-box{
+      /* background-image: url("./img/ps/mouseandstart.png"); */
+      /* animation: float 3s ease-in-out infinite; */
+      /* background-image: url("./img/logo/logo2x.png"); */
+      background-size: cover; /* div 크기에 맞춤 */
+      background-repeat: no-repeat;
+      background-position: center;
     }
     .allergy-box-text {
       background: rgba(0, 0, 0, 0.4);
@@ -477,11 +493,17 @@ wschoi789,s1,"""ps는 Problem Solving"""
     /* ==============================
        6) members 섹션 (#members)
        ============================== */
+    .copy-right-soled{
+      width: 100%;
+      text-align: left;
+      color: #4631ff;
+      margin-top: 30px;
+    }
     .members-box {
       padding: 40px;
       display: flex;
       flex-direction: column;
-      gap: 24px;
+      gap: 14px;
       align-items: center;
       justify-content: center;
       margin: 0 auto;
@@ -496,7 +518,7 @@ wschoi789,s1,"""ps는 Problem Solving"""
       position: relative;
       align-self: stretch;
       text-align: center;
-      padding: 40px;
+      padding: 10px;
     }
     .members-box-context {
       background: rgba(0, 0, 0, 0.4);
@@ -504,7 +526,7 @@ wschoi789,s1,"""ps는 Problem Solving"""
       padding: 40px;
       display: flex;
       flex-direction: column;
-      gap: 80px;
+      /* gap: 80px; */
       align-items: center;
       justify-content: flex-start;
       flex-shrink: 0;
@@ -868,8 +890,15 @@ wschoi789,s1,"""ps는 Problem Solving"""
   <!-- allergy Section -->
   <section id="allergy" class="page-section">
     <div class="allergy-box">
-      <div>
+      <div class="allergy-box-image-box">
+        
+        <!-- <img src="./img/ps/rigth-bottom-mouse.png" alt="lo image" class="ps-front-img"> -->
+        <!-- <img src="./img/ps/mouseandstart.png" alt="lo image" class="ps-front-img"> -->
         <img src="./img/logo/logo2x.png" alt="lo image" class="ps-img">
+        <!-- <img src="./img/ps/mouseandstart.png" alt="lo image" class="ps-img"> -->
+         <!-- <div class="allergy-box-front-image">
+
+         </div> -->
       </div>
       <div class="allergy-box-text">
         <div class="allergy-box-title">
@@ -915,6 +944,7 @@ wschoi789,s1,"""ps는 Problem Solving"""
       <div class="members-box-title">
         멤버 소개
       </div>
+      
       <div class="members-box-context">
         <div class="members-box-context-div">
           <div class="members-box-context-title">지도교수 / 동아리 대표</div>
@@ -927,22 +957,27 @@ wschoi789,s1,"""ps는 Problem Solving"""
               </div>
             </div>
             <div class="members-container member-rank-s">
-              <img src="./img/rank/s1.svg" alt="rank p4">
+              <img src="./img/rank/s1.svg" alt="rank s1">
               <div class="members-container-context">
                 <div class="members-container-context-id">kye04250425</div>
-                <div class="members-container-context-text">"알고리즘 너무 좋아요"</div>
+                <div class="members-container-context-text">"풀어는 드릴게."</div>
               </div>
             </div>
           </div>
         </div>
         <div class="members-box-context-div">
-          <div class="members-box-context-title">멤버</div>
+          <div class="members-box-context-title" style="margin-top: 80px;">멤버</div>
             <div class="members-box-context-member-containers auto-js">
               
             </div>
         </div>
+        <div class="copy-right-soled">
+          Tier Image © solve.ac.
+        </div>
       </div>
+      
     </div>
+    
   </section>
 
   <!-- history Section -->
