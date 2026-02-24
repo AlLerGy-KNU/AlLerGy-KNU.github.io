@@ -7,88 +7,8 @@
   <link rel="icon" type="image/png" href="./img/logo/logo1x.png">
   <link rel="stylesheet" href="style.css">
   
-  <script>
-document.addEventListener("DOMContentLoaded", async function () {
-    const container = document.querySelector(".auto-js");
-
-    // rank별 클래스 매핑 (CSS 클래스명)
-    const rankClassMap = {
-        "u": "member-rank-u",
-        "p": "member-rank-p",
-        "g": "member-rank-g",
-        "s": "member-rank-s",
-        "b": "member-rank-b",
-        "d": "member-rank-d",
-        "r": "member-rank-r",
-        "m": "member-rank-m"
-    };
-
-    try {
-        // 1. data.json 파일 가져오기
-        const response = await fetch('./data.json');
-        if (!response.ok) throw new Error("데이터를 불러오지 못했습니다.");
-        
-        const jsonData = await response.json();
-        const users = jsonData.users;
-
-        // 2. 객체 순회 (Object.entries를 사용해 [아이디, 데이터] 쌍으로 접근)
-        Object.entries(users).forEach(([solvedId, info]) => {
-            const { rank, solvedCount } = info;
-
-            // 기본 컨테이너 생성
-            const memberDiv = document.createElement("div");
-            memberDiv.classList.add("members-container");
-
-            // 랭크 데이터 처리
-            if (!!rank) {
-                const rankKey = rank.charAt(0); // 첫 글자 추출 (p, g, s, b...)
-                const rankClass = rankClassMap[rankKey] || "";
-                
-                if (rankClass) memberDiv.classList.add(rankClass);
-
-                // 이미지 추가
-                const img = document.createElement("img");
-                img.src = `./img/rank/${rank}.svg`;
-                img.alt = `rank ${rank}`;
-                memberDiv.appendChild(img);
-            }
-
-            // 텍스트 영역(아이디, 상태메시지) 생성
-            const contextDiv = document.createElement("div");
-            contextDiv.classList.add("members-container-context");
-
-            const idDiv = document.createElement("div");
-            idDiv.classList.add("members-container-context-id");
-            idDiv.textContent = solvedId;
-
-            const textDiv = document.createElement("div");
-            textDiv.classList.add("members-container-context-text");
-            textDiv.textContent = `${solvedCount}문제 해결`;
-
-            contextDiv.appendChild(idDiv);
-            contextDiv.appendChild(textDiv);
-            memberDiv.appendChild(contextDiv);
-
-            container.appendChild(memberDiv);
-        });
-
-    } catch (error) {
-        console.error("Error:", error);
-        container.innerHTML = `<p style="color:white;">데이터를 로드하는 중 오류가 발생했습니다.</p>`;
-    }
-});
-
-  </script>
-  <script>
-    window.addEventListener('scroll', function() {
-      const header = document.querySelector('header');
-      if(window.scrollY > window.innerHeight - 50) {
-        header.classList.add('show');
-      } else {
-        header.classList.remove('show');
-      }
-    });
-  </script>
+  <script src="data.js"></script>
+  <script src="script.js" defer></script>
 </head>
 <body>
   <section id="hero">
@@ -127,12 +47,7 @@ document.addEventListener("DOMContentLoaded", async function () {
           <div class="allergy-box-title2">Algorithm Lever's Gym</div>
         </div>
         <div class="allergy-box-line"></div>
-        <div class="allergy-box-context">
-          Algorithm Lever's Gym은 알고리즘을 사랑하는 사람들의 동아리로,
-          알고리즘 스터디, 코딩 대회 준비 등을 중심으로 운영되고 있어요.<br>
-          가입을 위해서는 초보자 실력자 구분 없이, 알고리즘을 통해 문제를 해결하고,
-          새로운 가능성을 탐구하고 싶어하면 충분하답니다.
-        </div>
+        <div class="allergy-box-context"></div>
       </div>
     </div>
   </section>
@@ -256,29 +171,12 @@ document.addEventListener("DOMContentLoaded", async function () {
       <div class="footer-box-info">
         AlLerGy
       </div>
-      <div class="footer-box-context">
-        지도교수 : 강원대학교 융합보안학과 교수 이동재<br>
-        회장 : 강원대학교 컴퓨터공학과 김이든<br>
-        featuring : 강원대학교 컴퓨터공학과 교수 이다영<br>
-        <br>
-        email : rladlems1031@gmail.com
-      </div>
+      <div class="footer-box-context"></div>
+      
       <div class="footer-box-context">
         © 2025 AlLerGy. All rights reserved.
       </div>
     </div>
   </footer>
-
-  <script>
-    // 스크롤 시 헤더 보이기
-    window.addEventListener('scroll', function() {
-      const header = document.querySelector('header');
-      if(window.scrollY > window.innerHeight - 50) {
-        header.classList.add('show');
-      } else {
-        header.classList.remove('show');
-      }
-    });
-  </script>
 </body>
 </html>

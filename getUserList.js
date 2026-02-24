@@ -49,7 +49,7 @@ async function getUserList() {
                 }
             });
 
-            fs.writeFileSync('data.json', JSON.stringify({
+            fs.writeFileSync('userList.json', JSON.stringify({
                 userCount: userIds.length,
                 users: userIds,
                 lastUpdate: new Date().toISOString()
