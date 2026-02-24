@@ -26,11 +26,11 @@ async function getUserList() {
 
                 if (userId) {
                     // getRank(비동기 함수)를 여기서 호출하지만 기다리지 않고 Promise만 반환합니다.
-                    const userInfo = await getRank(userId);
+                    const userInfo = await getUserInfo(userId);
                     return {
                         userId: userId,
                         data: {
-                            rank: ranks[userInfo['rank']],
+                            rank: ranks[userInfo['tier']],
                             solvedCount: userInfo['solvedCount']
                         }
                     };
@@ -60,7 +60,7 @@ async function getUserList() {
     }
 }
 
-async function getRank(userId) {
+async function getUserInfo(userId) {
     try {
         // HTTP GET 요청 전송
         const response = await axios.get(url['profile'] + userId);
