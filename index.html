@@ -60,15 +60,10 @@
       <div class="activity-box-txt-box">
         <div class="activity-box-title">
           <div class="activity-box-title1">모임활동</div>
-          <div class="activity-box-title2">매주 교수님과 함께 진행</div>
+          <div class="activity-box-title2">{모임활동 부제목}</div>
         </div>
         <div class="activity-box-line"></div>
-        <div class="activity-box-context">
-          매주 백준, 프로그래머스 등을 통해 알고리즘 문제 풀이<br>
-          교수님과 멘토를 통한 질의 응답<br>
-          모임 후, 그날 못푼 문제 배당하여 복습 풀이<br>
-          정기 모임활동 때마다 저녁 제공
-        </div>
+        <div class="activity-box-context">{모임활동 설명}</div>
       </div>
     </div>
   </section>
@@ -83,18 +78,18 @@
         <div class="members-box-context-div">
           <div class="members-box-context-title">지도교수 / 동아리 대표</div>
           <div class="members-box-context-member-containers">
-            <div class="members-container member-rank-p">
-              <img src="./img/rank/p2.svg" alt="rank p2">
-              <div class="members-container-context ">
-                <div class="members-container-context-id">dd2dd2</div>
-                <div class="members-container-context-text">AlLerGy 화이팅 !</div>
+            <div id="member-box-professor-rank-box" class="rankClassMap">
+              <img id="member-box-professor-rank-img" src="rankImg" alt="rank OO">
+              <div class="members-container-context">
+                <div id="member-box-professor-id" class="members-container-context-id">dd2dd2</div>
+                <div id="member-box-professor-statusMessage" class="members-container-context-text" id="club-leader">지도교수님 상태메시지</div>
               </div>
             </div>
-            <div class="members-container member-rank-s">
-              <img src="./img/rank/s1.svg" alt="rank s1">
+            <div id="member-box-leader-rank-box" class="rankClassMap">
+              <img id="member-box-leader-rank-img" src="rankImg" alt="rank OO">
               <div class="members-container-context">
-                <div class="members-container-context-id">kye04250425</div>
-                <div class="members-container-context-text">풀어는 드릴게.</div>
+                <div id="member-box-leader-id" class="members-container-context-id">회장 백준 ID</div>
+                <div id="member-box-leader-statusMessage" class="members-container-context-text">회장 상태메시지</div>
               </div>
             </div>
           </div>

@@ -1,15 +1,18 @@
-// script.js
 document.addEventListener("DOMContentLoaded", async function () {
-    // 1. data.js에서 데이터 불러와서 HTML에 넣기
+    // data.js에서 데이터 불러와서 HTML에 넣기
     const descriptionBox = document.querySelector(".allergy-box-context");
-    const footerInfoBox = document.querySelectorAll(".footer-box-context")[0]; // 푸터의 첫 번째 context 상자
+    const activity_box_title2 = document.querySelector(".activity-box-title2");
+    const activity_box_context = document.querySelector(".activity-box-context");
+    const footerInfoBox = document.querySelectorAll(".footer-box-context")[0];
 
-    if (typeof clubInfo !== 'undefined') {
-        if (descriptionBox) descriptionBox.innerHTML = clubInfo.description;
-        if (footerInfoBox) footerInfoBox.innerHTML = clubInfo.footerContact;
+    if (typeof info !== 'undefined') {
+        if (descriptionBox) descriptionBox.innerText = info.description;
+        if (activity_box_title2) activity_box_title2.innerText = info["activity-box-title2"];
+        if (activity_box_context) activity_box_context.innerText = info["activity-box-context"];
+        if (footerInfoBox) footerInfoBox.innerText = `지도교수 : ${info.professor}<br>회장 : ${info.leader}<br>featuring : ${info.featuring}<br>email : ${info.email}`;
     }
 
-    // 2. 유저 데이터 불러오기 및 생성
+    // 유저 데이터 불러오기 및 생성
     const container = document.querySelector(".auto-js");
     const rankClassMap = {
         "u": "member-rank-u",
@@ -32,40 +35,57 @@ document.addEventListener("DOMContentLoaded", async function () {
         Object.entries(users).forEach(([solvedId, info]) => {
             const { rank, solvedCount } = info;
 
-            const memberDiv = document.createElement("div");
-            memberDiv.classList.add("members-container");
-
-            if (!!rank) {
-                const rankKey = rank.charAt(0);
-                const rankClass = rankClassMap[rankKey] || "";
-                
-                if (rankClass) memberDiv.classList.add(rankClass);
-
-                const img = document.createElement("img");
-                img.src = `./img/rank/${rank}.svg`;
-                img.alt = `rank ${rank}`;
-                memberDiv.appendChild(img);
+            // 지도교수 id
+            if (solvedId == memberPage.professor.id) {
+                document.getElementById('member-box-professor-rank-box').className = `members-container ${rankClassMap[rank.charAt(0)] || ""}`;
+                document.getElementById('member-box-professor-rank-img').src = `./img/rank/${rank}.svg`;
+                document.getElementById('member-box-professor-id').innerText = solvedId;
+                document.getElementById('member-box-professor-statusMessage').innerText = memberPage.professor.statusMessage;
+            } 
+            // 동아리 회장 id
+            else if (solvedId == memberPage.leader.id) {
+                document.getElementById('member-box-leader-rank-box').className = `members-container ${rankClassMap[rank.charAt(0)] || ""}`;
+                document.getElementById('member-box-leader-rank-img').src = `./img/rank/${rank}.svg`;
+                document.getElementById('member-box-leader-id').innerText = solvedId;
+                document.getElementById('member-box-professor-statusMessage').innerText = memberPage.leader.statusMessage;
+            } 
+            // 일반 부원
+            else {
+                const memberDiv = document.createElement("div");
+                memberDiv.classList.add("members-container");
+    
+                if (!!rank) {
+                    const rankKey = rank.charAt(0);
+                    const rankClass = rankClassMap[rankKey] || "";
+                    
+                    if (rankClass) memberDiv.classList.add(rankClass);
+    
+                    const img = document.createElement("img");
+                    img.src = `./img/rank/${rank}.svg`;
+                    img.alt = `rank ${rank}`;
+                    memberDiv.appendChild(img);
+                }
+    
+                const contextDiv = document.createElement("div");
+                contextDiv.classList.add("members-container-context");
+    
+                const idDiv = document.createElement("div");
+                idDiv.classList.add("members-container-context-id");
+                idDiv.textContent = solvedId;
+    
+                const textDiv = document.createElement("div");
+                textDiv.classList.add("members-container-context-text");
+    
+                // 세자리마다 콤마 붙이기
+                const formattedCount = Number(solvedCount).toLocaleString();
+                textDiv.textContent = `${formattedCount}문제 해결`;
+    
+                contextDiv.appendChild(idDiv);
+                contextDiv.appendChild(textDiv);
+                memberDiv.appendChild(contextDiv);
+    
+                if (container) container.appendChild(memberDiv);
             }
-
-            const contextDiv = document.createElement("div");
-            contextDiv.classList.add("members-container-context");
-
-            const idDiv = document.createElement("div");
-            idDiv.classList.add("members-container-context-id");
-            idDiv.textContent = solvedId;
-
-            const textDiv = document.createElement("div");
-            textDiv.classList.add("members-container-context-text");
-            
-            // 앞서 질문하신 세 자리 콤마 적용!
-            const formattedCount = Number(solvedCount).toLocaleString();
-            textDiv.textContent = `${formattedCount}문제 해결`;
-
-            contextDiv.appendChild(idDiv);
-            contextDiv.appendChild(textDiv);
-            memberDiv.appendChild(contextDiv);
-
-            if (container) container.appendChild(memberDiv);
         });
 
     } catch (error) {
