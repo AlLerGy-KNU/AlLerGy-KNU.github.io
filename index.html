@@ -9,59 +9,50 @@
   <script src="getUserList.js"></script>
   
   <script>
-document.addEventListener("DOMContentLoaded", function () {
-    const csvData = `
-rlarudwns815,s3,ps는 Problem Solving
-hsuv,s5,ps는 Problem Solving
-sunset0816,u,ps는 Problem Solving
-tobbot16,g4,ps는 Problem Solving
-manuna530,g1,ps는 Problem Solving
-skdlxm8823,u,ps는 Problem Solving
-01star01ekek,u,열심히 하겠슴돠
-kiho000811,b2,ps는 Problem Solving
-jin990128,s5,ps는 Problem Solving
-parksuchan218,u,ps는 Problem Solving
-mule129,g4,ps는 Problem Solving
-dnjsgudtjr11,p5,ps는 Play Station
-dltmdghksxk,g4,ps는 Problem Solving
-leedeokjun,b1,ps는 Problem Solving
-leejunugk14,g1,모두 행복하세요.
-gylim7826,g3,화이팅
-glue0440,g3,ps는 Pasta Salad
-eclass,u,Pizza never lies.
-eaken,g1,플래 찍는다
-robot9862,g3,ps는 Problem Solving
-castberry,p4,dinae.tistory.com
-yoonh2454,s4,ps는 Problem Solving
-wschoi789,s1,하루 1 잡초..
-rudghl0102,s1,이정도 쯤이야 껌이지~~
-obtsj,s1,think optimistic
-dltmdghksxk,g4,ps는 Problem Solving
-wlsrbwjd643,g4,gyutrange.github.io
-shuding,s1,안녕하세요
-k2akr7,g4,반갑습니다.
-kgh398,s5,루비 푸는 날 까지
-nk030538,u,ps는 Program Solving
-`;
+document.addEventListener("DOMContentLoaded", async function () {
+    const container = document.querySelector(".auto-js");
 
-    // rank별 클래스 매핑
+    // rank별 클래스 매핑 (CSS 클래스명)
     const rankClassMap = {
         "p": "member-rank-p",
         "g": "member-rank-g",
         "s": "member-rank-s",
         "b": "member-rank-b",
-        "d": "member-rank-d"
+        "d": "member-rank-d",
+        "r": "member-rank-r" // 루비 추가
     };
 
-    const container = document.querySelector(".auto-js");
+    try {
+        // 1. data.json 파일 가져오기
+        const response = await fetch('./data.json');
+        if (!response.ok) throw new Error("데이터를 불러오지 못했습니다.");
+        
+        const jsonData = await response.json();
+        const users = jsonData.users;
 
-    csvData.trim().split("\n").forEach(line => {
-        const [solvedId, rank, text] = line.split(",").map(v => v.replace(/"""/g, "").trim());
+        // 2. 객체 순회 (Object.entries를 사용해 [아이디, 데이터] 쌍으로 접근)
+        Object.entries(users).forEach(([solvedId, info]) => {
+            const { rank, statusMessage } = info;
 
-        if (rank === "u") {
+            // 기본 컨테이너 생성
             const memberDiv = document.createElement("div");
-            memberDiv.classList.add("members-container"); 
+            memberDiv.classList.add("members-container");
 
+            // 랭크 데이터 처리 (u가 아닐 경우)
+            if (rank !== "u" && rank !== "unranked") {
+                const rankKey = rank.charAt(0); // 첫 글자 추출 (p, g, s, b...)
+                const rankClass = rankClassMap[rankKey] || "";
+                
+                if (rankClass) memberDiv.classList.add(rankClass);
+
+                // 이미지 추가
+                const img = document.createElement("img");
+                img.src = `./img/rank/${rank}.svg`;
+                img.alt = `rank ${rank}`;
+                memberDiv.appendChild(img);
+            }
+
+            // 텍스트 영역(아이디, 상태메시지) 생성
             const contextDiv = document.createElement("div");
             contextDiv.classList.add("members-container-context");
 
@@ -71,48 +62,19 @@ nk030538,u,ps는 Program Solving
 
             const textDiv = document.createElement("div");
             textDiv.classList.add("members-container-context-text");
-            textDiv.textContent = text;
+            textDiv.textContent = statusMessage;
 
             contextDiv.appendChild(idDiv);
             contextDiv.appendChild(textDiv);
             memberDiv.appendChild(contextDiv);
 
             container.appendChild(memberDiv);
-            return; 
-        }
+        });
 
-        const rankKey = rank.replace(/[0-9]/g, ""); 
-        const rankNumber = rank.replace(/[^0-9]/g, ""); 
-
-        const rankClass = rankClassMap[rankKey] || "";
-
-        const rankImage = `./img/rank/${rank}.svg`;
-
-        const memberDiv = document.createElement("div");
-        memberDiv.classList.add("members-container", rankClass);
-
-        const img = document.createElement("img");
-        img.src = rankImage;
-        img.alt = `rank ${rank}`;
-        memberDiv.appendChild(img);
-
-        const contextDiv = document.createElement("div");
-        contextDiv.classList.add("members-container-context");
-
-        const idDiv = document.createElement("div");
-        idDiv.classList.add("members-container-context-id");
-        idDiv.textContent = solvedId;
-
-        const textDiv = document.createElement("div");
-        textDiv.classList.add("members-container-context-text");
-        textDiv.textContent = text;
-
-        contextDiv.appendChild(idDiv);
-        contextDiv.appendChild(textDiv);
-        memberDiv.appendChild(contextDiv);
-
-        container.appendChild(memberDiv);
-    });
+    } catch (error) {
+        console.error("Error:", error);
+        container.innerHTML = `<p style="color:white;">데이터를 로드하는 중 오류가 발생했습니다.</p>`;
+    }
 });
 
   </script>
