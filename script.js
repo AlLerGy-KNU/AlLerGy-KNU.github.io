@@ -4,12 +4,16 @@ document.addEventListener("DOMContentLoaded", async function () {
     const activity_box_title2 = document.querySelector(".activity-box-title2");
     const activity_box_context = document.querySelector(".activity-box-context");
     const footerInfoBox = document.querySelectorAll(".footer-box-context")[0];
+    const contactBtnLink = document.getElementById("contact-btn-link");
+    const socialEmailLink = document.getElementById("social-email-link");
 
     if (typeof info !== 'undefined') {
         if (descriptionBox) descriptionBox.innerHTML = info.description;
         if (activity_box_title2) activity_box_title2.innerHTML = info["activity-box-title2"];
         if (activity_box_context) activity_box_context.innerHTML = info["activity-box-context"];
         if (footerInfoBox) footerInfoBox.innerHTML = `지도교수 : ${info.professor}<br>회장 : ${info.leader}<br>featuring : ${info.featuring}<br><br>email : ${info.email}`;
+        if (contactBtnLink) contactBtnLink.href = `mailto:${info.email}`;
+        if (socialEmailLink) socialEmailLink.href = `mailto:${info.email}`;
     }
 
     // 유저 데이터 불러오기 및 생성
