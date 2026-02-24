@@ -92,6 +92,19 @@ document.addEventListener("DOMContentLoaded", async function () {
         console.error("Error:", error);
         if (container) container.innerHTML = `<p style="color:white;">데이터를 로드하는 중 오류가 발생했습니다.</p>`;
     }
+
+    // 활동내역 로드
+    const historyContainer = document.getElementById("history-container");
+    if (!historyContainer || typeof historyData === 'undefined') return;
+
+    historyContainer.innerHTML = historyData.map(item => `
+        <div class="history-box-right-text-box">
+            <div class="history-box-right-text-box-title">${item.year}</div>
+            <div class="history-box-right-text-box-text">
+                ${item.contents.map(content => `<div>${content}</div>`).join('')}
+            </div>
+        </div>
+    `).join('');
 });
 
 // 3. 스크롤 시 헤더 보이기 기능
