@@ -95,9 +95,9 @@ document.addEventListener("DOMContentLoaded", async function () {
 
     // 활동내역 로드
     const historyContainer = document.getElementById("history-container");
-    if (!historyContainer || typeof historyData === 'undefined') return;
+    if (!historyContainer || typeof history === 'undefined') return;
 
-    historyContainer.innerHTML = historyData.map(item => `
+    historyContainer.innerHTML = history.map(item => `
         <div class="history-box-right-text-box">
             <div class="history-box-right-text-box-title">${item.year}</div>
             <div class="history-box-right-text-box-text">
