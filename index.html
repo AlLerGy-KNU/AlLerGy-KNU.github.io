@@ -5,8 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>AlLerGy Page</title>
   <link rel="icon" type="image/png" href="./img/logo/logo1x.png">
-
-  <script src="getUserList.js"></script>
   
   <script>
 document.addEventListener("DOMContentLoaded", async function () {
@@ -14,7 +12,7 @@ document.addEventListener("DOMContentLoaded", async function () {
 
     // rank별 클래스 매핑 (CSS 클래스명)
     const rankClassMap = {
-        "u": "member-rank-u";
+        "u": "member-rank-u",
         "p": "member-rank-p",
         "g": "member-rank-g",
         "s": "member-rank-s",
@@ -40,7 +38,7 @@ document.addEventListener("DOMContentLoaded", async function () {
             const memberDiv = document.createElement("div");
             memberDiv.classList.add("members-container");
 
-            // 랭크 데이터 처리 (u가 아닐 경우)
+            // 랭크 데이터 처리
             if (!!rank) {
                 const rankKey = rank.charAt(0); // 첫 글자 추출 (p, g, s, b...)
                 const rankClass = rankClassMap[rankKey] || "";
