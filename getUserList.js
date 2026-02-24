@@ -1,5 +1,6 @@
 const axios = require('axios');
 const cheerio = require('cheerio');
+const fs = require('fs');
 
 async function getRanklist() {
     const url = "https://www.acmicpc.net/group/ranklist/22125";
@@ -22,10 +23,11 @@ async function getRanklist() {
                 userIds.push($(element).text().trim());
             });
 
-            // 4. 결과 출력
-            console.log("총 인원수: ", userIds.length);
-            
-            console.log(userIds.join("\n\n"));
+            fs.writeFileSync('data.json', JSON.stringify({
+                const: userIds.length,
+                users: userIds,
+                lastUpdate: new Date().toISOString()
+            }, null, 2));
         }
     } catch (error) {
         console.error("오류 발생:", error.message);
