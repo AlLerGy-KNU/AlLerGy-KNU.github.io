@@ -544,7 +544,7 @@ footer {
 /* 오른쪽 텍스트와 선을 감싸는 부모 (상대 위치 지정) */
 .history-box-right {
   display: flex;
-  flex-shrink: 0;
+  width: 100%;
   max-width: 612px;
   position: relative;
   /* gap은 absolute 선에는 적용되지 않으므로 margin으로 조절합니다 */
@@ -602,6 +602,8 @@ footer {
   font-family: "Inter-Regular", sans-serif;
   font-size: 20px;
   line-height: 1.5;
+  word-break: keep-all; /* 단어 단위로 자연스럽게 줄바꿈 */
+  overflow-wrap: break-word; /* 너무 긴 단어는 쪼개서라도 줄바꿈 */
 }
 
 /* ==============================
@@ -713,6 +715,22 @@ footer {
 
 /* 작은 태블릿/폰 (가로 ~576px) 이하 */
 @media (max-width: 576px) {
+  .history-box {
+    flex-direction: column; /* 가로 배치를 세로 배치로 변경 */
+    gap: 30px;
+  }
+  .history-box-left {
+    min-width: auto;
+  }
+  .history-box-right {
+    max-width: 100%; /* 모바일에서는 가로 폭을 꽉 채우게 변경 */
+  }
+  .history-box-right-text-box-title {
+    font-size: 20px; /* 모바일 화면에 맞춰 폰트 크기 조절 */
+  }
+  .history-box-right-text-box-text {
+    font-size: 16px; 
+  }
   .hero-div-div1 {
     font-size: 48px;
   }
@@ -768,4 +786,12 @@ footer {
   .members-box-context-member-containers {
     grid-template-columns: 1fr;
   } 
+  .history-box-right-text {
+    margin-left: 30px; /* 화면이 좁으니 선과 텍스트 사이 간격을 약간 좁힘 */
+  }
+  .history-box-right-text-box::before {
+    left: -30.5px; /* 간격을 좁힌 만큼 동그라미(점) 위치도 당겨줌 */
+    width: 10px; /* 동그라미 크기도 살짝 작게 */
+    height: 10px;
+  }
 }
