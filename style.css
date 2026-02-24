@@ -557,7 +557,7 @@ footer {
   top: 10px; /* 시작 위치를 글자 높이에 살짝 맞춤 */
   bottom: 10px; /* 콘텐츠가 끝나는 곳까지 자동으로 늘어남 */
   width: 3px; /* 선 두께 */
-  background-color: #4631ff; /* 동아리 테마 색상 */
+  background-color: #ffffff; /* 동아리 테마 색상 */
   border-radius: 2px;
 }
 
@@ -587,7 +587,7 @@ footer {
   height: 12px;
   border-radius: 50%;
   background-color: #24273A; /* 배경색과 동일하게 해서 구멍 뚫린 느낌 */
-  border: 3px solid #4631ff; /* 점 테두리를 메인 색상으로 */
+  border: 3px solid #ffffff; /* 점 테두리를 메인 색상으로 */
   z-index: 2; /* 선 위로 올라오게 설정 */
 }
 

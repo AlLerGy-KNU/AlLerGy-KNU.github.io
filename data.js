@@ -27,6 +27,10 @@ const history = [
     },
     {
         year: "2025",
-        contents: ["방학 정기모임 진행", "동아리 홈페이지 자체 제작", "프로그래밍 경진대회 주최"]
+        contents: ["동아리 홈페이지 자체 제작", "ACPC 본선 진출", "ICPC 본선 진출", "충남대학교 알고리즘 대회 은상 수상", "SW개발보안 경진대회 대상, 우수상 수상", "AI 부트캠프 최우수상 수상", "카카오 테크캠퍼스 최우수상 수상", "Agentic Workflow 해커톤 최우수상 수상", "전국 GoogleCloud 기반 AI 융합 경진대회 대상 수상", "삼성 SW-AI 부트캠프 SSAFY 합격"]
+    },
+    {
+        year: "2026",
+        contents: ["Coming Soon !!"]
     }
 ];
