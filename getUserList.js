@@ -9,7 +9,7 @@ const url = {
 const headers = {
     'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36'
 };
-const ranks = ["unranked", "b5", "b4", "b3", "b2", "b1", "s5", "s4", "s3", "s2", "s1", "g5", "g4", "g3", "g2", "g1", "p5", "p4", "p3", "p2", "p1", "d5", "d4", "d3", "d2", "d1", "r5", "r4", "r3", "r2", "r1", "legend"];
+const ranks = ["unranked", "b5", "b4", "b3", "b2", "b1", "s5", "s4", "s3", "s2", "s1", "g5", "g4", "g3", "g2", "g1", "p5", "p4", "p3", "p2", "p1", "d5", "d4", "d3", "d2", "d1", "r5", "r4", "r3", "r2", "r1", "master"];
 
 async function getUserList() {
     try {
@@ -23,16 +23,15 @@ async function getUserList() {
             const promises = rows.map(async (element) => {
                 const tds = $(element).find('td');
                 const userId = $(tds[1]).text().trim();
-                const statusMessage = $(tds[2]).text().trim();
 
                 if (userId) {
                     // getRank(비동기 함수)를 여기서 호출하지만 기다리지 않고 Promise만 반환합니다.
-                    const rank = await getRank(userId);
+                    const userInfo = await getRank(userId);
                     return {
                         userId: userId,
                         data: {
-                            rank: rank,
-                            statusMessage: statusMessage
+                            rank: ranks[userInfo['rank']],
+                            solvedCount: userInfo['solvedCount']
                         }
                     };
                 }
@@ -66,7 +65,7 @@ async function getRank(userId) {
         // HTTP GET 요청 전송
         const response = await axios.get(url['profile'] + userId);
         const data = response.data;
-        return ranks[data.tier];
+        return data;
     } catch (error) {
         console.error("[getRank] 오류 발생:", error.message);
     }

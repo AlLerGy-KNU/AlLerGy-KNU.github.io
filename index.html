@@ -14,12 +14,14 @@ document.addEventListener("DOMContentLoaded", async function () {
 
     // rank별 클래스 매핑 (CSS 클래스명)
     const rankClassMap = {
+        "u": "member-rank-u";
         "p": "member-rank-p",
         "g": "member-rank-g",
         "s": "member-rank-s",
         "b": "member-rank-b",
         "d": "member-rank-d",
-        "r": "member-rank-r" // 루비 추가
+        "r": "member-rank-r",
+        "m": "member-rank-m"
     };
 
     try {
@@ -32,14 +34,14 @@ document.addEventListener("DOMContentLoaded", async function () {
 
         // 2. 객체 순회 (Object.entries를 사용해 [아이디, 데이터] 쌍으로 접근)
         Object.entries(users).forEach(([solvedId, info]) => {
-            const { rank, statusMessage } = info;
+            const { rank, solvedCount } = info;
 
             // 기본 컨테이너 생성
             const memberDiv = document.createElement("div");
             memberDiv.classList.add("members-container");
 
             // 랭크 데이터 처리 (u가 아닐 경우)
-            if (rank !== "u" && rank !== "unranked") {
+            if (!!rank) {
                 const rankKey = rank.charAt(0); // 첫 글자 추출 (p, g, s, b...)
                 const rankClass = rankClassMap[rankKey] || "";
                 
@@ -62,7 +64,7 @@ document.addEventListener("DOMContentLoaded", async function () {
 
             const textDiv = document.createElement("div");
             textDiv.classList.add("members-container-context-text");
-            textDiv.textContent = statusMessage;
+            textDiv.textContent = solvedCount+"문제 해결";
 
             contextDiv.appendChild(idDiv);
             contextDiv.appendChild(textDiv);
