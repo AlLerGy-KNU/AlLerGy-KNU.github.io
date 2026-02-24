@@ -7,19 +7,19 @@ document.addEventListener("DOMContentLoaded", async function () {
 
     if (typeof info !== 'undefined') {
         if (descriptionBox) descriptionBox.innerText = info.description;
-        if (activity_box_title2) activity_box_title2.innerText = info["activity-box-title2"];
-        if (activity_box_context) activity_box_context.innerText = info["activity-box-context"];
-        if (footerInfoBox) footerInfoBox.innerText = `지도교수 : ${info.professor}<br>회장 : ${info.leader}<br>featuring : ${info.featuring}<br>email : ${info.email}`;
+        if (activity_box_title2) activity_box_title2.innerHTML = info["activity-box-title2"];
+        if (activity_box_context) activity_box_context.innerHTML = info["activity-box-context"];
+        if (footerInfoBox) footerInfoBox.innerHTML = `지도교수 : ${info.professor}<br>회장 : ${info.leader}<br>featuring : ${info.featuring}<br>email : ${info.email}`;
     }
 
     // 유저 데이터 불러오기 및 생성
     const container = document.querySelector(".auto-js");
     const rankClassMap = {
         "u": "member-rank-u",
-        "p": "member-rank-p",
-        "g": "member-rank-g",
-        "s": "member-rank-s",
         "b": "member-rank-b",
+        "s": "member-rank-s",
+        "g": "member-rank-g",
+        "p": "member-rank-p",
         "d": "member-rank-d",
         "r": "member-rank-r",
         "m": "member-rank-m"
