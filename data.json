@@ -1,101 +1,74 @@
 {
   "users": {
     "dnjsgudtjr11": {
-      "rank": "d4",
-      "statusMessage": "2024.10.5 ~"
+      "solvedCount": 2658
     },
     "cubic": {
-      "rank": "d3",
-      "statusMessage": "🧊"
+      "solvedCount": 1850
     },
     "chunbae74": {
-      "rank": "p4",
-      "statusMessage": "커피도둑 춘배"
+      "solvedCount": 911
     },
     "castberry": {
-      "rank": "p4",
-      "statusMessage": "dinae.tistory.com"
+      "solvedCount": 843
     },
     "hjkiln": {
-      "rank": "g1",
-      "statusMessage": "."
+      "solvedCount": 784
     },
     "soumatou": {
-      "rank": "g2",
-      "statusMessage": "0218"
+      "solvedCount": 714
     },
     "gylim7826": {
-      "rank": "g2",
-      "statusMessage": "."
+      "solvedCount": 537
     },
     "dd2dd2": {
-      "rank": "p2",
-      "statusMessage": "Hello Everything"
+      "solvedCount": 521
     },
     "jjh4450": {
-      "rank": "p4",
-      "statusMessage": "말문이 막힘"
+      "solvedCount": 517
     },
     "kye04250425": {
-      "rank": "g3",
-      "statusMessage": "김이든 https://github.com/YIDEUNKIM"
+      "solvedCount": 307
     },
     "wschoi789": {
-      "rank": "g3",
-      "statusMessage": "안녕하세요"
+      "solvedCount": 284
     },
     "qwer0987": {
-      "rank": "g3",
-      "statusMessage": "👻"
+      "solvedCount": 255
     },
     "mule129": {
-      "rank": "g3",
-      "statusMessage": "Debug.Log(\"Hello, world!\")"
+      "solvedCount": 227
     },
     "glue0440": {
-      "rank": "g3",
-      "statusMessage": "."
+      "solvedCount": 221
     },
     "hyun021218": {
-      "rank": "s1",
-      "statusMessage": "ㅇㅈㅎ"
+      "solvedCount": 186
     },
     "mouiye": {
-      "rank": "s2",
-      "statusMessage": "먀 !"
+      "solvedCount": 173
     },
     "sgjww1": {
-      "rank": "s1",
-      "statusMessage": "1234"
+      "solvedCount": 172
     },
     "k2akr7": {
-      "rank": "g3",
-      "statusMessage": "/"
+      "solvedCount": 167
     },
     "kgh398": {
-      "rank": "s2",
-      "statusMessage": "컴공..."
+      "solvedCount": 122
     },
     "binhan1e3": {
-      "rank": "s1",
-      "statusMessage": "노력하겠습니다"
+      "solvedCount": 103
     },
     "parkha0623": {
-      "rank": "s4",
-      "statusMessage": "."
+      "solvedCount": 78
     },
     "kihyjin153": {
-      "rank": "s5",
-      "statusMessage": "정진!"
+      "solvedCount": 64
     },
     "fcsolution11": {
-      "rank": "s4",
-      "statusMessage": "gello"
+      "solvedCount": 47
     }
   },
-<<<<<<< HEAD
-  "lastUpdate": "2026-02-24T13:44:13.885Z"
-=======
-  "lastUpdate": "2026-02-24T13:46:46.317Z"
->>>>>>> da11913683f08b06dec8be4b410d615f89238599
+  "lastUpdate": "2026-02-24T14:01:28.327Z"
 }
