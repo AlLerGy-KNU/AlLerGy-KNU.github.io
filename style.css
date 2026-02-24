@@ -540,28 +540,57 @@ footer {
   font-weight: 700;
   min-width: 200px;
 }
+
+/* 오른쪽 텍스트와 선을 감싸는 부모 (상대 위치 지정) */
 .history-box-right {
   display: flex;
   flex-shrink: 0;
   max-width: 612px;
   position: relative;
-  gap: 20px;
+  /* gap은 absolute 선에는 적용되지 않으므로 margin으로 조절합니다 */
 }
+
+/* 이미지 대신 CSS로 그리는 세로 선 */
 .history-box-right-line {
-  position: relative;
-  margin-left: 0;
+  position: absolute;
+  left: 6px; /* 선의 가로 위치 */
+  top: 10px; /* 시작 위치를 글자 높이에 살짝 맞춤 */
+  bottom: 10px; /* 콘텐츠가 끝나는 곳까지 자동으로 늘어남 */
+  width: 3px; /* 선 두께 */
+  background-color: #4631ff; /* 동아리 테마 색상 */
+  border-radius: 2px;
 }
+
+/* 텍스트 컨테이너 (선과 겹치지 않게 여백 추가) */
 .history-box-right-text {
   display: flex;
   flex-direction: column;
-  gap: 20px;
-  margin-left: 20px;
+  gap: 40px; /* 연도별 간격을 조금 더 넓혀서 타임라인 느낌 강조 */
+  margin-left: 40px; /* 세로선이 들어갈 공간 확보 */
 }
+
+/* 연도별 개별 블록 (점을 찍기 위해 상대 위치 지정) */
 .history-box-right-text-box {
   display: flex;
   flex-direction: column;
   gap: 10px;
+  position: relative; /* ::before(점)의 기준점이 됨 */
 }
+
+/* 연도 옆에 동그란 점(노드) 생성 */
+.history-box-right-text-box::before {
+  content: "";
+  position: absolute;
+  left: -40.5px; /* 세로선 위치에 정확히 맞춤 */
+  top: 6px; /* 텍스트(연도)의 수직 중앙쯤으로 정렬 */
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: #24273A; /* 배경색과 동일하게 해서 구멍 뚫린 느낌 */
+  border: 3px solid #4631ff; /* 점 테두리를 메인 색상으로 */
+  z-index: 2; /* 선 위로 올라오게 설정 */
+}
+
 .history-box-right-text-box-title {
   color: #ffffff;
   font-family: "Inter-Bold", sans-serif;
@@ -574,6 +603,7 @@ footer {
   font-size: 20px;
   line-height: 1.5;
 }
+
 /* ==============================
    8) contact 섹션 (#contact)
    ============================== */

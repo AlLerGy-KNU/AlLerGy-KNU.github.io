@@ -20,6 +20,13 @@ const memberPage = {
     },
 };
 
-const history = {
-
-};
+const history = [
+    {
+        year: "2024",
+        contents: ["AlLerGy 동아리 창설", "정기모임 시작"]
+    },
+    {
+        year: "2025",
+        contents: ["방학 정기모임 진행", "동아리 홈페이지 자체 제작", "프로그래밍 경진대회 주최"]
+    }
+];

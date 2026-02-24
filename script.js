@@ -6,10 +6,10 @@ document.addEventListener("DOMContentLoaded", async function () {
     const footerInfoBox = document.querySelectorAll(".footer-box-context")[0];
 
     if (typeof info !== 'undefined') {
-        if (descriptionBox) descriptionBox.innerText = info.description;
+        if (descriptionBox) descriptionBox.innerHTML = info.description;
         if (activity_box_title2) activity_box_title2.innerHTML = info["activity-box-title2"];
         if (activity_box_context) activity_box_context.innerHTML = info["activity-box-context"];
-        if (footerInfoBox) footerInfoBox.innerHTML = `지도교수 : ${info.professor}<br>회장 : ${info.leader}<br>featuring : ${info.featuring}<br>email : ${info.email}`;
+        if (footerInfoBox) footerInfoBox.innerHTML = `지도교수 : ${info.professor}<br>회장 : ${info.leader}<br>featuring : ${info.featuring}<br><br>email : ${info.email}`;
     }
 
     // 유저 데이터 불러오기 및 생성
@@ -47,7 +47,7 @@ document.addEventListener("DOMContentLoaded", async function () {
                 document.getElementById('member-box-leader-rank-box').className = `members-container ${rankClassMap[rank.charAt(0)] || ""}`;
                 document.getElementById('member-box-leader-rank-img').src = `./img/rank/${rank}.svg`;
                 document.getElementById('member-box-leader-id').innerText = solvedId;
-                document.getElementById('member-box-professor-statusMessage').innerText = memberPage.leader.statusMessage;
+                document.getElementById('member-box-leader-statusMessage').innerText = memberPage.leader.statusMessage;
             } 
             // 일반 부원
             else {
