@@ -6,6 +6,9 @@ on:
   push:
     branches: [ main ] # 코드가 push될 때도 실행
 
+permissions:
+  contents: write #저장소에 내용을 쓸 수 있는 권한 부여
+  
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -28,6 +31,6 @@ jobs:
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
-          git add userList.json
+          git add -f userList.json
           git commit -m "Update ranklist data" || echo "No changes to commit"
           git push
