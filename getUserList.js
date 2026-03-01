@@ -57,6 +57,7 @@ async function getUserList() {
         }
     } catch (error) {
         console.error("[getUserList] 오류 발생:", error.message);
+        process.exit(1); // 에러 발생 시 Actions가 실패로 인식하게 함
     }
 }
 
@@ -68,6 +69,7 @@ async function getUserInfo(userId) {
         return data;
     } catch (error) {
         console.error("[getRank] 오류 발생:", error.message);
+        process.exit(1); // 에러 발생 시 Actions가 실패로 인식하게 함
     }
 }
 
