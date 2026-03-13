@@ -23,14 +23,14 @@ const memberPage = {
 const history = [
     {
         year: "2024",
-        contents: ["AlLerGy 동아리 창설", "정기모임 시작"]
+        contents: ["[1대 회장: 김이든]", "AlLerGy 동아리 창설", "정기모임 시작"]
     },
     {
         year: "2025",
-        contents: ["1대 회장: 김이든", "동아리 홈페이지 자체 제작", "ACPC 본선 진출", "ICPC 본선 진출", "충남대학교 알고리즘 대회 은상 수상", "SW개발보안 경진대회 대상, 우수상 수상", "AI 부트캠프 최우수상 수상", "카카오 테크캠퍼스 최우수상 수상", "Agentic Workflow 해커톤 최우수상 수상", "전국 GoogleCloud 기반 AI 융합 경진대회 대상 수상", "삼성 SW-AI 부트캠프 SSAFY 합격"]
+        contents: ["동아리 홈페이지 자체 제작", "ACPC 본선 진출", "ICPC 본선 진출", "충남대학교 알고리즘 대회 은상 수상", "SW개발보안 경진대회 대상, 우수상 수상", "AI 부트캠프 최우수상 수상", "카카오 테크캠퍼스 최우수상 수상", "Agentic Workflow 해커톤 최우수상 수상", "전국 GoogleCloud 기반 AI 융합 경진대회 대상 수상", "삼성 SW-AI 부트캠프 SSAFY 합격"]
     },
     {
         year: "2026",
-        contents: ["2대 회장: 배준영", "Coming Soon !!"]
+        contents: ["[2대 회장: 배준영]", "Coming Soon !!"]
     }
 ];
