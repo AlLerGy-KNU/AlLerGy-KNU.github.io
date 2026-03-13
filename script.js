@@ -30,8 +30,8 @@ document.addEventListener("DOMContentLoaded", async function () {
     };
 
     try {
-        const response = await fetch('./userList.json');
-        if (!response.ok) throw new Error("데이터를 불러오지 못했습니다.");
+        const response = await fetch('./userInfoList.json');
+        if (!response.ok) throw new Error("[script.js] userInfoList.json 데이터를 불러오지 못했습니다.");
         
         const jsonData = await response.json();
         const users = jsonData.users;
