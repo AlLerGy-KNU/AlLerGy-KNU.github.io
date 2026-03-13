@@ -23,7 +23,7 @@ const memberPage = {
 const history = [
     {
         year: "2024",
-        contents: ["AlLerGy 동아리 창설", "정기모임 시작"]
+        contents: ["[1대 회장: 김이든]", "AlLerGy 동아리 창설", "정기모임 시작"]
     },
     {
         year: "2025",
@@ -31,6 +31,6 @@ const history = [
     },
     {
         year: "2026",
-        contents: ["Coming Soon !!"]
+        contents: ["[2대 회장: 배준영]", "Coming Soon !!"]
     }
 ];

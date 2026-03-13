@@ -1,40 +1,41 @@
 {
+  "userCount": 22,
   "users": {
     "dnjsgudtjr11": {
       "rank": "d4",
-      "solvedCount": 2664
+      "solvedCount": 2770
     },
     "cubic": {
       "rank": "d3",
-      "solvedCount": 1855
+      "solvedCount": 1903
     },
     "chunbae74": {
       "rank": "p4",
-      "solvedCount": 911
+      "solvedCount": 919
     },
     "castberry": {
       "rank": "p4",
-      "solvedCount": 843
+      "solvedCount": 844
     },
     "hjkiln": {
       "rank": "g1",
-      "solvedCount": 784
+      "solvedCount": 836
     },
     "soumatou": {
       "rank": "g2",
-      "solvedCount": 714
+      "solvedCount": 717
     },
     "gylim7826": {
       "rank": "g2",
-      "solvedCount": 537
+      "solvedCount": 540
+    },
+    "jjh4450": {
+      "rank": "p4",
+      "solvedCount": 530
     },
     "dd2dd2": {
       "rank": "p2",
       "solvedCount": 521
-    },
-    "jjh4450": {
-      "rank": "p4",
-      "solvedCount": 519
     },
     "kye04250425": {
       "rank": "g3",
@@ -42,11 +43,11 @@
     },
     "wschoi789": {
       "rank": "g3",
-      "solvedCount": 290
+      "solvedCount": 298
     },
     "qwer0987": {
       "rank": "g3",
-      "solvedCount": 256
+      "solvedCount": 269
     },
     "mule129": {
       "rank": "g3",
@@ -54,23 +55,19 @@
     },
     "glue0440": {
       "rank": "g3",
-      "solvedCount": 221
+      "solvedCount": 222
+    },
+    "k2akr7": {
+      "rank": "g3",
+      "solvedCount": 203
     },
     "hyun021218": {
       "rank": "s1",
-      "solvedCount": 188
+      "solvedCount": 202
     },
     "mouiye": {
       "rank": "s2",
       "solvedCount": 173
-    },
-    "sgjww1": {
-      "rank": "s1",
-      "solvedCount": 172
-    },
-    "k2akr7": {
-      "rank": "g3",
-      "solvedCount": 171
     },
     "kgh398": {
       "rank": "s2",
@@ -82,16 +79,16 @@
     },
     "parkha0623": {
       "rank": "s3",
-      "solvedCount": 79
+      "solvedCount": 82
+    },
+    "fcsolution11": {
+      "rank": "s2",
+      "solvedCount": 67
     },
     "kihyjin153": {
       "rank": "s5",
       "solvedCount": 64
-    },
-    "fcsolution11": {
-      "rank": "s4",
-      "solvedCount": 47
     }
   },
-  "lastUpdate": "2026-02-26T15:47:49.302Z"
+  "lastUpdate": "2026-03-13T00:26:48.283Z"
 }
