@@ -124,18 +124,9 @@ document.addEventListener("DOMContentLoaded", async function () {
     `).join('');
 });
 
-// 3. 스크롤 시 헤더 보이기 기능
+// 스크롤 시 nav에 그림자 추가
 window.addEventListener('scroll', () => {
-    const header = document.querySelector('header');
-    if (window.innerWidth <= 768) {
-        // 모바일에서는 항상 표시
-        header.classList.add('show');
-    } else {
-        // PC에서는 기존 로직 유지 (예: 특정 스크롤 이상에서 표시)
-        if (window.scrollY > 100) {
-            header.classList.add('show');
-        } else {
-            header.classList.remove('show');
-        }
-    }
+    const nav = document.getElementById('top-nav');
+    if (!nav) return;
+    nav.classList.toggle('scrolled', window.scrollY > 10);
 });
