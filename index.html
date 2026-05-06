@@ -1,45 +1,63 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>AlLerGy Page</title>
+  <title>AlLerGy</title>
   <link rel="icon" type="image/png" href="./img/logo/logo1x.png">
   <link rel="stylesheet" href="style.css">
-  
   <script src="data.js"></script>
   <script src="script.js" defer></script>
 </head>
 <body>
+
+  <!-- ─── Global Nav (44px black) ─── -->
+  <nav id="top-nav">
+    <div class="nav-inner">
+      <a class="nav-brand" href="#">AlLerGy</a>
+      <div class="nav-center">
+        <a href="#allergy"  class="nav-link">소개</a>
+        <a href="#activity" class="nav-link">활동</a>
+        <a href="#members"  class="nav-link">멤버</a>
+        <a href="#history"  class="nav-link">이력</a>
+      </div>
+      <div class="nav-end">
+        <a href="https://allergy-knu.github.io/news" class="btn-pill-primary">News</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ─── Hero (photography tile) ─── -->
   <section id="hero">
-    <div class="hero-div">
-      <div class="hero-div-div1">
-        AlLerGy
+    <div class="hero-content">
+      <p class="hero-eyebrow">강원대학교 알고리즘 동아리</p>
+      <h1 class="hero-title">AlLerGy</h1>
+      <p class="hero-subtitle">
+        <span class="hero-hl">Al</span>gorithm&nbsp;<span class="hero-hl">L</span>ov<span class="hero-hl">er</span>'s&nbsp;<span class="hero-hl">Gy</span>m
+      </p>
+      <div class="hero-actions">
+        <a href="#allergy" class="btn-primary-lg">알아보기</a>
+        <a href="#contact" class="btn-outline">문의하기</a>
       </div>
-      <div class="hero-div-div2">
-        Kangwon National University<br>
-        <div class="hero-blue">Al</div>gorithm <div class="hero-blue">L</div>ov<div class="hero-blue">er</div>'s <div class="hero-blue">Gy</div>m
-      </div>
+    </div>
+    <div class="hero-scroll-hint">
+      <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+        <path d="M12 5v14M5 12l7 7 7-7"/>
+      </svg>
     </div>
   </section>
 
-  <a href="https://allergy-knu.github.io/news" class="news-fab" title="News로 이동">
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-      <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path>
-      <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
-    </svg>
-  </a>
-
+  <!-- ─── About (parchment tile) ─── -->
   <section id="allergy" class="page-section">
-    <div class="allergy-box">
+    <div class="section-inner allergy-box">
       <div class="allergy-box-image-box">
-        
-        <img src="./img/logo/logo2x.png" alt="lo image" class="ps-img">
-        </div>
+        <img src="./img/logo/logo2x.png" alt="AlLerGy 로고" class="ps-img">
+      </div>
       <div class="allergy-box-text">
+        <p class="section-label">About</p>
         <div class="allergy-box-title">
           <div class="allergy-box-title1">AlLerGy</div>
-          <div class="allergy-box-title2">Algorithm Lever's Gym</div>
+          <div class="allergy-box-title2">Algorithm Lover's Gym</div>
         </div>
         <div class="allergy-box-line"></div>
         <div class="allergy-box-context"></div>
@@ -47,109 +65,107 @@
     </div>
   </section>
 
+  <!-- ─── Activity (dark tile) ─── -->
   <section id="activity" class="page-section">
-    <div class="activity-box">
-      <div class="activity-box-image">
-        <img src="./img/image-20.png" alt="algorithm" style="width: 100%; border-radius: 8px;">
-      </div>
+    <div class="section-inner activity-box">
       <div class="activity-box-txt-box">
+        <p class="section-label">Activity</p>
         <div class="activity-box-title">
           <div class="activity-box-title1">모임활동</div>
-          <div class="activity-box-title2">{모임활동 부제목}</div>
+          <div class="activity-box-title2"></div>
         </div>
         <div class="activity-box-line"></div>
-        <div class="activity-box-context">{모임활동 설명}</div>
+        <div class="activity-box-context"></div>
+      </div>
+      <div class="activity-box-image">
+        <img src="./img/image-20.png" alt="알고리즘"
+             style="width:100%;border-radius:11px;display:block;">
       </div>
     </div>
   </section>
 
+  <!-- ─── Members (white tile) ─── -->
   <section id="members" class="page-section">
-    <div class="members-box">
-      <div class="members-box-title">
-        멤버 소개
+    <div class="section-inner members-box">
+      <div class="members-header">
+        <p class="section-label">Members</p>
+        <div class="members-box-title">멤버 소개</div>
       </div>
-      
+
       <div class="members-box-context">
         <div class="members-box-context-div">
           <div class="members-box-context-title">지도교수 / 동아리 대표</div>
           <div class="members-box-context-member-containers">
-            <div id="member-box-professor-rank-box" class="rankClassMap">
-              <img id="member-box-professor-rank-img" src="rankImg" alt="rank OO">
+            <div id="member-box-professor-rank-box" class="members-container">
+              <img id="member-box-professor-rank-img" src="" alt="rank">
               <div class="members-container-context">
-                <div id="member-box-professor-id" class="members-container-context-id">지도교수님 백준 ID</div>
-                <div id="member-box-professor-statusMessage" class="members-container-context-text" id="club-leader">지도교수님 상태메시지</div>
+                <div id="member-box-professor-id" class="members-container-context-id">-</div>
+                <div id="member-box-professor-statusMessage" class="members-container-context-text">-</div>
               </div>
             </div>
-            <div id="member-box-leader-rank-box" class="rankClassMap">
-              <img id="member-box-leader-rank-img" src="rankImg" alt="rank OO">
+            <div id="member-box-leader-rank-box" class="members-container">
+              <img id="member-box-leader-rank-img" src="" alt="rank">
               <div class="members-container-context">
-                <div id="member-box-leader-id" class="members-container-context-id">회장 백준 ID</div>
-                <div id="member-box-leader-statusMessage" class="members-container-context-text">회장 상태메시지</div>
+                <div id="member-box-leader-id" class="members-container-context-id">-</div>
+                <div id="member-box-leader-statusMessage" class="members-container-context-text">-</div>
               </div>
             </div>
           </div>
         </div>
-        <div class="members-box-context-div">
-          <div class="members-box-context-title" id="memberTitle" style="margin-top: 80px;">멤버</div>
-            <div class="members-box-context-member-containers auto-js">
-              
-            </div>
-        </div>
-        <div class="copy-right-soled">
-          Tier Image © solve.ac. <br>
-          featuring : dayoung lee
-        </div>
-      </div>
-      
-    </div>
-    
-  </section>  
 
+        <div class="members-box-context-div">
+          <div class="members-box-context-title" id="memberTitle" style="margin-top:48px;">멤버</div>
+          <div class="members-box-context-member-containers auto-js"></div>
+        </div>
+
+        <p class="copy-right-soled">Tier Image © solved.ac &nbsp;·&nbsp; featuring : dayoung lee</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── History (dark tile) ─── -->
   <section id="history" class="page-section">
-    <div class="history-box">
-      <div class="history-box-left">활동이력</div>
+    <div class="section-inner history-box">
+      <div class="history-box-left">
+        <p class="section-label">History</p>
+        <div class="history-title">활동이력</div>
+      </div>
       <div class="history-box-right">
         <div class="history-box-right-line" id="timeline-line"></div>
-        
         <div class="history-box-right-text" id="history-container"></div>
       </div>
     </div>
   </section>
 
-  <section id="contact" class="page-section" style="min-height: 70vh;">
-    <div class="contact-box">
-      <div class="contact-text">
-        AlLerGy와 함께<br>알고리즘에 도전해봐요
-      </div>
-      <a id="contact-btn-link" style="text-decoration: none;" href="">
-        <div class="contact-btn">
-          문의하기
-        </div>
-      </a>
-      
+  <!-- ─── Contact (darkest tile) ─── -->
+  <section id="contact" class="page-section">
+    <div class="section-inner contact-box">
+      <p class="section-label contact-label">Join Us</p>
+      <div class="contact-text">AlLerGy와 함께<br>알고리즘에 도전해봐요</div>
+      <a id="contact-btn-link" href="" class="contact-btn">문의하기</a>
     </div>
   </section>
 
-  <div class="social-icons">
-    <a href="https://github.com/AlLerGy-KNU">
-      <img class="frame11" src="./img/frame10.svg" alt="github">
-    </a>
-    <a id="social-email-link" href="">
-      <img class="message-alt-fill6" src="./img/message-alt-fill5.svg" alt="email link">
-    </a>
-  </div>
-
+  <!-- ─── Footer (parchment) ─── -->
   <footer>
-    <div class="footer-box">
-      <div class="footer-box-info">
-        AlLerGy
+    <div class="footer-inner">
+      <div class="footer-top">
+        <div class="footer-brand">AlLerGy</div>
+        <div class="footer-box-context"></div>
       </div>
-      <div class="footer-box-context"></div>
-      
-      <div class="footer-box-context">
-        © 2025 AlLerGy. All rights reserved.
+      <div class="footer-bottom">
+        <span class="footer-copy">© 2025 AlLerGy. All rights reserved.</span>
+        <div class="footer-social">
+          <a href="https://github.com/AlLerGy-KNU" target="_blank" rel="noopener">
+            <img src="./img/frame10.svg" alt="GitHub" width="18" height="18">
+          </a>
+          <a id="social-email-link" href="">
+            <img src="./img/message-alt-fill5.svg" alt="Email" width="18" height="18">
+          </a>
+        </div>
       </div>
     </div>
   </footer>
+
 </body>
 </html>

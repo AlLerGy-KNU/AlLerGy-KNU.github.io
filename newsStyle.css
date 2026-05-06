@@ -1,104 +1,261 @@
-@import url('https://fonts.googleapis.com/gh/sun-typeface/SUIT/fonts/variable/woff2/SUIT-Variable.css');
+/* ================================================================
+   AlLerGy News — Apple Design System
+   Reference: apple/DESIGN.md
+   ================================================================ */
 
-.home-fab {
-    position: fixed;
-    top: 20px;
-    left: 20px;
-    width: 50px;
-    height: 50px;
-    background-color: white;
-    border: 1px solid #e0f2fe; /* blue-100 */
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #3b82f6; /* blue-500 */
-    box-shadow: 0 4px 12px rgba(186, 230, 253, 0.4);
-    z-index: 1000;
-    transition: all 0.3s ease;
+:root {
+  --clr-primary:         #0066cc;
+  --clr-primary-active:  #004499;
+  --clr-ink:             #1d1d1f;
+  --clr-ink-muted-80:    #333333;
+  --clr-ink-muted-48:    #7a7a7a;
+  --clr-hairline:        #e0e0e0;
+  --clr-canvas:          #ffffff;
+  --clr-parchment:       #f5f5f7;
+  --clr-nav:             #000000;
+  --clr-on-dark:         #ffffff;
+  --clr-error:           #c13515;
+
+  --r-sm:   8px;
+  --r-lg:   18px;
+  --r-pill: 9999px;
+
+  --font: system-ui, -apple-system, BlinkMacSystemFont,
+          'SF Pro Text', 'Helvetica Neue', sans-serif;
+  --font-display: system-ui, -apple-system, BlinkMacSystemFont,
+                  'SF Pro Display', 'Helvetica Neue', sans-serif;
+  --nav-h: 44px;
 }
 
-.home-fab:hover {
-    transform: scale(1.1);
-    background-color: #eff6ff; /* blue-50 */
-    box-shadow: 0 6px 16px rgba(186, 230, 253, 0.6);
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: var(--font);
+  background: var(--clr-parchment);
+  color: var(--clr-ink);
+  min-height: 100vh;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  padding: calc(var(--nav-h) + 48px) 16px 80px;
 }
 
-/* 모바일에서는 버튼이 너무 크지 않게 조절 */
-@media (max-width: 767px) {
-    .home-fab {
-        top: 15px;
-        left: 15px;
-        width: 44px;
-        height: 44px;
-    }
+/* ─── Global nav (reused from main) ─── */
+.news-nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  height: var(--nav-h);
+  background: rgba(0, 0, 0, 0.9);
+  backdrop-filter: saturate(180%) blur(20px);
+  -webkit-backdrop-filter: saturate(180%) blur(20px);
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  padding: 0 22px;
+  gap: 24px;
 }
 
-body { 
-    font-family: 'SUIT Variable', sans-serif; 
-    background-color: #fcfdfe; 
-    color: #1e293b;
-    /* 모바일에서 불필요한 가로 스크롤 방지 */
-    overflow-x: hidden;
+.news-nav-brand {
+  font-family: var(--font-display);
+  font-size: 17px;
+  font-weight: 600;
+  letter-spacing: -0.374px;
+  color: var(--clr-on-dark);
+  text-decoration: none;
 }
 
-/* 로그 아이템 애니메이션 및 효과 */
-.log-item { 
-    animation: fadeIn 0.4s ease-out;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
+.news-nav-divider {
+  width: 1px;
+  height: 16px;
+  background: rgba(255,255,255,0.2);
 }
 
-.log-item:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(239, 246, 255, 0.8);
-}
-body { 
-    font-family: 'SUIT Variable', sans-serif; 
-    background-color: #fcfdfe; 
-    color: #1e293b;
-    overflow-x: hidden;
+.news-nav-title {
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: -0.12px;
+  color: rgba(255,255,255,0.6);
 }
 
-/* 로그 아이템 애니메이션 및 효과 */
-.log-item:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(239, 246, 255, 0.8);
+/* ─── Container ─── */
+.news-container {
+  max-width: 680px;
+  margin: 0 auto;
 }
 
+/* ─── Header ─── */
+.news-header {
+  margin-bottom: 48px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid var(--clr-hairline);
+}
+
+.news-eyebrow {
+  font-size: 14px;
+  font-weight: 400;
+  letter-spacing: -0.224px;
+  color: var(--clr-primary);
+  margin-bottom: 6px;
+}
+
+.news-title {
+  font-family: var(--font-display);
+  font-size: 40px;
+  font-weight: 600;
+  line-height: 1.1;
+  letter-spacing: 0;
+  color: var(--clr-ink);
+  margin-bottom: 10px;
+}
+
+.news-last-update {
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: -0.12px;
+  color: var(--clr-ink-muted-48);
+  line-height: 1.6;
+}
+
+/* ─── Log container ─── */
+.log-container {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+/* ─── Log item card ─── */
 .log-item {
-    display: flex !important;
-    align-items: center !important; /* 수직 중앙 정렬 강제 */
-    min-height: 70px; /* 모바일에서 카드가 너무 납작해지지 않게 설정 */
+  background: var(--clr-canvas);
+  border: 1px solid var(--clr-hairline);
+  border-radius: var(--r-lg);   /* 18px — store-utility-card style */
+  padding: 18px 22px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  min-height: 68px;
+  overflow: hidden;
+  animation: fadeIn 0.25s ease-out;
+  transition: transform 0.18s;
+}
+.log-item:hover { transform: scale(1.01); }
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(4px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.log-item-title {
+  display: flex;
+  align-items: center;
+  flex: 1;
+  gap: 4px;
+  overflow: hidden;
+  min-width: 0;
+}
+
+.log-user-link {
+  color: var(--clr-primary);
+  font-size: 17px;
+  font-weight: 600;
+  letter-spacing: -0.374px;
+  text-decoration: none;
+  white-space: nowrap;
+  flex-shrink: 0;
+  transition: opacity 0.15s;
+}
+.log-user-link:hover { opacity: 0.72; text-decoration: underline; }
+
+.log-item-content {
+  font-size: 17px;
+  font-weight: 400;
+  letter-spacing: -0.374px;
+  color: var(--clr-ink);
+  display: flex;
+  align-items: center;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.log-item-date {
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: -0.12px;
+  color: var(--clr-ink-muted-48);
+  white-space: nowrap;
+  flex-shrink: 0;
+  margin-left: auto;
+  padding-left: 12px;
 }
 
 .tier-icon {
-    height: 1.2em; /* 폰트 크기보다 살짝 크게 설정 */
-    width: auto;
-    margin: 0 4px;
-    display: inline-block;
-    /* 텍스트와 라인을 맞추기 위해 정렬 수정 */
-    vertical-align: middle; 
-    position: relative;
-    top: -1px; 
+  height: 1.1em;
+  width: auto;
+  vertical-align: middle;
+  position: relative;
+  top: -1px;
+  margin: 0 3px;
 }
 
-/* 모바일 전용 스타일 최적화 */
-@media (max-width: 767px) {
-    .log-item {
-        padding: 0.75rem 1rem !important;
-        gap: 8px !important;
-    }
+/* ─── Empty / Error states ─── */
+.log-empty { padding: 80px 20px; text-align: center; }
+.log-empty p {
+  font-size: 21px;
+  font-weight: 600;
+  letter-spacing: 0.231px;
+  color: var(--clr-ink-muted-48);
+}
 
-    .log-item h2 {
-        /* flex-shrink를 방지하여 글자가 찌그러지지 않게 함 */
-        flex-shrink: 1;
-        display: flex !important;
-        align-items: center !important;
-    }
+.log-error {
+  text-align: center;
+  color: var(--clr-error);
+  padding: 40px;
+  font-size: 17px;
+  letter-spacing: -0.374px;
+}
 
-    .log-item time {
-        /* 날짜가 너무 위로 붙지 않도록 조정 */
-        align-self: center; 
-        margin-top: 2px;
-    }
+/* ─── Pagination ─── */
+.news-pagination {
+  margin-top: 48px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--clr-canvas);
+  border: 1px solid var(--clr-hairline);
+  border-radius: var(--r-lg);
+  padding: 10px 20px;
+}
+
+.pagination-btn {
+  background: none;
+  border: none;
+  font-family: var(--font);
+  font-size: 14px;
+  font-weight: 400;
+  letter-spacing: -0.224px;
+  color: var(--clr-primary);
+  cursor: pointer;
+  padding: 8px 14px;
+  border-radius: var(--r-pill);
+  transition: background 0.15s;
+}
+.pagination-btn:hover:not(:disabled) { background: var(--clr-parchment); }
+.pagination-btn:disabled { color: var(--clr-ink-muted-48); cursor: default; }
+.pagination-btn:active:not(:disabled) { transform: scale(0.95); }
+
+.pagination-info {
+  font-size: 14px;
+  font-weight: 400;
+  letter-spacing: -0.224px;
+  color: var(--clr-ink-muted-48);
+}
+
+/* ─── Responsive ─── */
+@media (max-width: 640px) {
+  body { padding: calc(var(--nav-h) + 28px) 12px 60px; }
+  .news-title { font-size: 28px; }
+  .log-item { padding: 14px 16px; min-height: 58px; }
+  .log-user-link    { font-size: 15px; }
+  .log-item-content { font-size: 15px; }
 }
