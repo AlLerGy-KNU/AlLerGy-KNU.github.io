@@ -1,11 +1,5 @@
 {
     "log": [
-         {
-            "type": "notice",
-            "date": "Tue Apr 28 2026 00:00:00 GMT+0900 (Korean Standard Time)",
-            "userId": "baekjoon",
-            "text": "Goodbye, BOJ!"
-        },
         {
             "type": "notice",
             "date": "Tue Apr 28 2026 00:00:00 GMT+0900 (Korean Standard Time)",
@@ -14,39 +8,39 @@
         },
         {
             "type": "solved",
-            "date": "Wed Apr 29 2026 20:15:22 GMT",
+            "date": "Wed Apr 28 2026 20:15:22 GMT",
             "userId": "hhsa00",
             "solvedCount": 60
         },
         {
             "type": "tier",
-            "date": "Wed Apr 29 2026 20:15:22 GMT",
+            "date": "Wed Apr 28 2026 20:15:22 GMT",
             "userId": "lni",
             "preTier": 9,
             "nowTier": 10
         },
         {
             "type": "tier",
-            "date": "Wed Apr 29 2026 20:15:22 GMT",
+            "date": "Wed Apr 28 2026 20:15:22 GMT",
             "userId": "gunyu1019",
             "preTier": 15,
             "nowTier": 16
         },
         {
             "type": "solved",
-            "date": "Wed Apr 29 2026 20:15:22 GMT",
+            "date": "Wed Apr 28 2026 20:15:22 GMT",
             "userId": "cubic",
             "solvedCount": 2000
         },
         {
             "type": "solved",
-            "date": "Wed Apr 29 2026 20:15:22 GMT",
+            "date": "Wed Apr 28 2026 20:15:22 GMT",
             "userId": "dnjsgudtjr11",
             "solvedCount": 3000
         },
         {
             "type": "tier",
-            "date": "Wed Apr 29 2026 20:15:22 GMT",
+            "date": "Wed Apr 28 2026 20:15:22 GMT",
             "userId": "dnjsgudtjr11",
             "preTier": 22,
             "nowTier": 23

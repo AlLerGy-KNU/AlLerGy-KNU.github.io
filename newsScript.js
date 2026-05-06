@@ -84,7 +84,7 @@ function updateUI(isEmpty) {
 
     const lastDate = new Date(logData.lastUpdate).toLocaleDateString();
     lastUpdateEl.innerHTML =
-        `Last updated: ${lastDate}<br><span style="font-size:11px;opacity:.7">※ News는 매일 17:30에 업데이트됩니다.</span>`;
+        `Last updated: ${lastDate}<br><span style="font-size:11px;opacity:.7">※ 백준이 서비스 종료함에 따라 더 이상의 업데이트는 진행되지 않습니다.</span>`;
 }
 
 function setupEventListeners() {
