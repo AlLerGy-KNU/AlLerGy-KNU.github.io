@@ -114,14 +114,44 @@ document.addEventListener("DOMContentLoaded", async function () {
     const historyContainer = document.getElementById("history-container");
     if (!historyContainer || typeof history === 'undefined') return;
 
+    const historyTypeMap = {
+        award:   { label: "수상", class: "chip-award" },
+        paper:   { label: "논문", class: "chip-paper" },
+        contest: { label: "대회", class: "chip-contest" },
+        event:   { label: "활동", class: "chip-event" }
+    };
+
     historyContainer.innerHTML = history.map(item => `
         <div class="history-box-right-text-box">
-            <div class="history-box-right-text-box-title">${item.year}</div>
+            <div class="history-box-right-text-box-title">
+                ${item.year}
+                ${item.leader ? `<span class="history-leader-tag">${item.leader}</span>` : ''}
+            </div>
             <div class="history-box-right-text-box-text">
-                ${item.contents.map(content => `<div>${content}</div>`).join('')}
+                ${item.contents.map(content => {
+                    const type = historyTypeMap[content.type] || historyTypeMap.event;
+                    return `<div class="history-item">
+                        <span class="history-chip ${type.class}">${type.label}</span>
+                        <span class="history-item-text">${content.text}</span>
+                    </div>`;
+                }).join('')}
             </div>
         </div>
     `).join('');
+
+    // 요약 숫자 (논문 n편 · 수상 n회)
+    const statsBox = document.getElementById("history-stats");
+    if (statsBox) {
+        const allContents = history.flatMap(item => item.contents);
+        const paperCount = allContents.filter(c => c.type === "paper").length;
+        const awardCount = allContents.filter(c => c.type === "award").length;
+        const firstYear = history[0]?.year;
+        statsBox.innerHTML = `
+            <div class="history-stat"><span class="history-stat-num">${paperCount}</span><span class="history-stat-label">논문</span></div>
+            <div class="history-stat"><span class="history-stat-num">${awardCount}</span><span class="history-stat-label">수상</span></div>
+            <div class="history-stat"><span class="history-stat-num">${firstYear}</span><span class="history-stat-label">Since</span></div>
+        `;
+    }
 });
 
 // 스크롤 시 nav에 그림자 추가
