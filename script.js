@@ -16,6 +16,59 @@ document.addEventListener("DOMContentLoaded", async function () {
         if (socialEmailLink) socialEmailLink.href = `mailto:${info.email}`;
     }
 
+    // Activity 사진 슬라이더
+    const sliderTrack = document.getElementById("activity-slider-track");
+    if (sliderTrack && typeof activityImages !== 'undefined' && activityImages.length > 0) {
+        const slider = document.getElementById("activity-slider");
+        const dotsBox = document.getElementById("activity-dots");
+        const AUTO_INTERVAL = 4000;
+        let current = 0;
+        let autoTimer = null;
+
+        sliderTrack.innerHTML = activityImages.map((src, i) =>
+            `<img src="${src}" alt="활동 사진 ${i + 1}" loading="lazy">`
+        ).join('');
+        dotsBox.innerHTML = activityImages.map((_, i) =>
+            `<button class="activity-slider-dot" type="button" aria-label="${i + 1}번 사진으로 이동"></button>`
+        ).join('');
+        const dots = [...dotsBox.children];
+
+        const goTo = (i) => {
+            current = (i + activityImages.length) % activityImages.length;
+            sliderTrack.style.transform = `translateX(-${current * 100}%)`;
+            dots.forEach((dot, idx) => dot.classList.toggle("active", idx === current));
+        };
+
+        const startAuto = () => {
+            clearInterval(autoTimer);
+            autoTimer = setInterval(() => goTo(current + 1), AUTO_INTERVAL);
+        };
+
+        // 수동 조작 시 자동 재생 타이머를 처음부터 다시 시작
+        const manualGo = (i) => { goTo(i); startAuto(); };
+
+        document.getElementById("activity-prev").addEventListener("click", () => manualGo(current - 1));
+        document.getElementById("activity-next").addEventListener("click", () => manualGo(current + 1));
+        dots.forEach((dot, i) => dot.addEventListener("click", () => manualGo(i)));
+
+        // 마우스를 올리는 동안 자동 재생 일시정지
+        slider.addEventListener("mouseenter", () => clearInterval(autoTimer));
+        slider.addEventListener("mouseleave", startAuto);
+
+        // 모바일 스와이프
+        let touchStartX = null;
+        slider.addEventListener("touchstart", (e) => { touchStartX = e.touches[0].clientX; }, { passive: true });
+        slider.addEventListener("touchend", (e) => {
+            if (touchStartX === null) return;
+            const deltaX = e.changedTouches[0].clientX - touchStartX;
+            if (Math.abs(deltaX) > 40) manualGo(deltaX < 0 ? current + 1 : current - 1);
+            touchStartX = null;
+        }, { passive: true });
+
+        goTo(0);
+        startAuto();
+    }
+
     // 유저 데이터 불러오기 및 생성
     const container = document.querySelector(".auto-js");
     const rankClassMap = {
@@ -42,7 +95,12 @@ document.addEventListener("DOMContentLoaded", async function () {
         if (memberTitle) memberTitle.innerHTML = `멤버 (${Object.keys(users).length}명)`;
 
 
-        Object.entries(users).forEach(([solvedId, info]) => {
+        // 티어 높은 순 정렬 (동률이면 푼 문제 수 순)
+        const sortedUsers = Object.entries(users).sort(([, a], [, b]) =>
+            (b.rank - a.rank) || ((b.solvedCount ?? 0) - (a.solvedCount ?? 0))
+        );
+
+        sortedUsers.forEach(([solvedId, info]) => {
             let { rank, solvedCount } = info;
             rank = ranks[rank];
 
@@ -108,6 +166,25 @@ document.addEventListener("DOMContentLoaded", async function () {
     } catch (error) {
         console.error("Error:", error);
         if (container) container.innerHTML = `<p style="color:white;">데이터를 로드하는 중 오류가 발생했습니다.</p>`;
+    }
+
+    // 모바일 멤버 접기/펼치기 (CSS 미디어쿼리에서 모바일일 때만 적용됨)
+    const membersToggle = document.getElementById("members-toggle");
+    if (membersToggle && container) {
+        const VISIBLE_COUNT = 12;
+        const hiddenCount = container.querySelectorAll(".members-container").length - VISIBLE_COUNT;
+        if (hiddenCount > 0) {
+            container.classList.add("collapsed");
+            membersToggle.textContent = `멤버 전체 보기 (+${hiddenCount}명)`;
+            membersToggle.addEventListener("click", () => {
+                const collapsed = container.classList.toggle("collapsed");
+                membersToggle.textContent = collapsed ? `멤버 전체 보기 (+${hiddenCount}명)` : "접기";
+                // 접을 때 화면이 페이지 아래에 남지 않도록 멤버 목록 위치로 복귀
+                if (collapsed) document.getElementById("memberTitle")?.scrollIntoView({ block: "start" });
+            });
+        } else {
+            membersToggle.style.display = "none";
+        }
     }
 
     // 활동내역 로드

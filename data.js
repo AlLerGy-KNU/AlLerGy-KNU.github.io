@@ -8,6 +8,13 @@ const info = {
     'activity-box-context': '백준을 통해 알고리즘 문제 풀이<br>멘토멘티 활동 진행<br>매주 코드메이트 개최(상품 증정)<br>정기 모임활동 때마다 식사 제공'
 };
 
+const activityImages = [
+    "./img/activity/img_01.jpg",
+    "./img/activity/img_02.jpg",
+    "./img/activity/img_03.jpg",
+    "./img/activity/img_04.jpg"
+];
+
 const memberPage = {
     'professor': {
         'id': 'dd2dd2', // 지도교수님 백준 id

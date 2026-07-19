@@ -4,3 +4,4 @@ package.json
 apple/
 .vscode/
 .claude/
+.DS_Store
