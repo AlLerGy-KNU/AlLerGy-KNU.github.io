@@ -78,8 +78,16 @@
         <div class="activity-box-context"></div>
       </div>
       <div class="activity-box-image">
-        <img src="./img/image-20.png" alt="알고리즘"
-             style="width:100%;border-radius:11px;display:block;">
+        <div class="activity-slider" id="activity-slider">
+          <div class="activity-slider-track" id="activity-slider-track"></div>
+          <button class="activity-slider-btn activity-slider-prev" id="activity-prev" type="button" aria-label="이전 사진">
+            <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M15 19l-7-7 7-7"/></svg>
+          </button>
+          <button class="activity-slider-btn activity-slider-next" id="activity-next" type="button" aria-label="다음 사진">
+            <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M9 5l7 7-7 7"/></svg>
+          </button>
+          <div class="activity-slider-dots" id="activity-dots"></div>
+        </div>
       </div>
     </div>
   </section>
@@ -116,6 +124,7 @@
         <div class="members-box-context-div">
           <div class="members-box-context-title" id="memberTitle" style="margin-top:48px;">멤버</div>
           <div class="members-box-context-member-containers auto-js"></div>
+          <button id="members-toggle" class="members-toggle" type="button"></button>
         </div>
 
         <p class="copy-right-soled">Tier Image © solved.ac &nbsp;·&nbsp; featuring : dayoung lee</p>
@@ -129,6 +138,7 @@
       <div class="history-box-left">
         <p class="section-label">History</p>
         <div class="history-title">활동이력</div>
+        <div class="history-stats" id="history-stats"></div>
       </div>
       <div class="history-box-right">
         <div class="history-box-right-line" id="timeline-line"></div>
