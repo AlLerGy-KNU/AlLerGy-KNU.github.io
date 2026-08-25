@@ -12,7 +12,8 @@ const activityImages = [
     "./img/activity/img_01.jpg",
     "./img/activity/img_02.jpg",
     "./img/activity/img_03.jpg",
-    "./img/activity/img_04.jpg"
+    "./img/activity/img_04.jpg",
+    "./img/activity/img_05.jpg",
 ];
 
 const memberPage = {
@@ -68,7 +69,7 @@ const history = [
             { type: "event", text: "강원대X한림대 보안동아리 연합: 화이트햇 / BoB 내방 교육 참여" },
             { type: "paper", text: "정보보호학회 \"양자컴퓨팅 성능 평가 방법론: Planted QUBO 벤치마크 분석\" Accepted" },
             { type: "award", text: "정보보호학회 \"대규모 최적화 문제 해결을 위한 그래프 분할 기반 양자 어닐링 접근법\" 우수논문상 수상" },
-            { type: "event", text: "\"바이브코딩 시대에서 주니어 개발자로 살아남는 방법\" 특강 진행 (강사: 옥강호)" }
+            { type: "event", text: "\"바이브코딩 시대에서 주니어 개발자로 살아남는 방법\" 특강 진행 (강사: 옥강호)" },
         ]
     }
 ];
